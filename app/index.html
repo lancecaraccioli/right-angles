@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-ng-app="AngularChromeAppShowcase" data-ng-csp data-ng-controller="IndexController">
+<head>
+    <meta charset="utf-8">
+    <title>{{appInfo.name}} ({{appInfo.version}})</title>
+
+    <link id="theme" rel="stylesheet" href="lib/vendor/bootswatch/{{appInfo.theme.name}}/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/vendor/angular/angular-csp.css">
+    <link rel="stylesheet" href="css/app.css">
+
+</head>
+<body >
+    <header class="{{nav.name}}">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="brand navbar-brand">{{appInfo.brand}}</a>
+                </div>
+                <tabset type-override="void navbar-nav" class="navbar-left navbar-collapse collapse ">
+                    <tab ng-repeat="item in nav.items"
+                         active="tab.active"
+                         disabled="tab.disabled"
+                         select="navItemSelected(item)">
+                        <tab-heading>
+                            <span class="glyphicon glyphicon-{{item.glyph}}"></span>{{item.heading}}
+                        </tab-heading>
+                    </tab>
+                </tabset>
+                <tabset type-override="void navbar-nav" class="navbar-right navbar-collapse collapse {{nav.name}}">
+                    <tab ng-repeat="item in nav.menus"
+                         active="tab.active"
+                         disabled="tab.disabled"
+                         select="navMenuSelected(item)">
+                        <tab-heading>
+                            <span class="glyphicon glyphicon-{{item.glyph}}"></span>{{item.heading}}
+                        </tab-heading>
+                    </tab>
+                    <tab>
+                        <tab-heading>
+                            <a role="button" class="dropdown-toggle"><span class="glyphicon glyphicon-wrench"></span>{{item.heading}}</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a ng-repeat="theme in themes" ng-click="themeSelected(theme)">{{theme.heading}}</a></li>
+                                <li class="divider"></li>
+                                <li><a target="_blank" ui-sref="http://bootswatch.com" ><span class="glyphicon glyphicon-new-window"></span>Themes<br />by bootswatch.com</a></li>
+                            </ul>
+                        </tab-heading>
+                    </tab>
+                </tabset>
+            </div>
+        </nav>
+    </header>
+
+    <section data-ui-view class="main-ui-pane"></section>
+
+    <footer>
+
+    </footer>
+
+    <script type="text/javascript" src='js/environment/setup.js'></script>
+    <script type="text/javascript" src='lib/vendor/jquery/jquery-2.1.0.js'></script>
+    <script type="text/javascript" src='lib/vendor/angular/angular.min.js'></script>
+    <script type="text/javascript" src='lib/vendor/angular/angular-route.min.js'></script>
+    <script type="text/javascript" src='lib/vendor/angular/angular-resource.min.js'></script>
+    <script type="text/javascript" src='lib/vendor/angular/angular-sanitize.min.js'></script>
+    <script type="text/javascript" src='lib/vendor/angular-ui/ui-router/angular-ui-router.min.js'></script>
+    <script type="text/javascript" src='lib/vendor/angular-ui/bootstrap/ui-bootstrap-0.10.0.custom.js'></script>
+    <script type="text/javascript" src='app.js'></script>
+    <script type="text/javascript" src='js/services/base.js'></script>
+    <script type="text/javascript" src='js/filters/base.js'></script>
+    <script type="text/javascript" src='js/directives/base.js'></script>
+    <script type="text/javascript" src='js/controllers/index-controller.js'></script>
+    <script type="text/javascript" src='js/controllers/showcase-controller.js'></script>
+    <script type="text/javascript" src='js/controllers/home-controller.js'></script>
+    <script type="text/javascript" src='js/controllers/showcase/angular-ui-bootstrap/demos/accordion-controller.js'></script>
+    <script type="text/javascript" src='js/controllers/showcase/angular-ui-bootstrap/demos/alert-controller.js'></script>
+</body>
+</html>
