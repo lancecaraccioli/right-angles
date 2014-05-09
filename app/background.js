@@ -1,10 +1,5 @@
 'use strict';
-/**
- * Listens for the app launching then creates the window
- *
- * @see http://developer.chrome.com/apps/app.runtime.html
- * @see http://developer.chrome.com/apps/app.window.html
- */
+
 chrome.app.runtime.onLaunched.addListener(function() {
   // Center window on screen.
   var screenWidth = screen.availWidth;
@@ -12,8 +7,8 @@ chrome.app.runtime.onLaunched.addListener(function() {
   var width = 933;
   var height = 500;
 
-  chrome.app.window.create('app/index.html', {
-    id: "helloWorldID",
+  chrome.app.window.create('app/app.html', {
+    id: "com.lancecaraccioli.angulared.apps.chrome",
     bounds: {
       width: width,
       height: height,

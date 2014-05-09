@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('AngularChromeAppShowcase').
-    controller('ShowcaseController', [
+    controller('angulared.ShowcaseController', [
         "$scope",
         "$state",
         "$stateParams",
@@ -57,19 +57,19 @@ angular.module('AngularChromeAppShowcase').
         $stateProvider.
             state('showcase', {
                 url: "/showcase",
-                templateUrl: 'partials/showcase.html'
+                templateUrl: 'showcase/showcase.html'
             }).
             state('showcase.vendor', {
                 url: "/:vendor",
                 views:{
                     detail:{
                         templateUrl: function(stateParams){
-                            return 'partials/showcase/'+stateParams.vendor+'/intro.html';
+                            return 'showcase/'+stateParams.vendor+'/intro.html';
                         }
                     },
                     "demos":{
                         templateUrl: function(stateParams){
-                            return 'partials/showcase/'+stateParams.vendor+'/demos.html';
+                            return 'showcase/'+stateParams.vendor+'/demos.html';
                         }
                     }
                 }
@@ -79,7 +79,7 @@ angular.module('AngularChromeAppShowcase').
                 views:{
                     'detail@showcase':{
                         templateUrl: function(stateParams){
-                            return 'partials/showcase/'+stateParams.vendor+'/demos/'+stateParams.demo+'.html';
+                            return 'showcase/'+stateParams.vendor+'/'+stateParams.demo+'/'+stateParams.demo+'.html';
                         }
                     }
                 }

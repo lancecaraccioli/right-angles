@@ -1,7 +1,7 @@
 'use strict';
 
 var home = angular.module('AngularChromeAppShowcase').
-    controller('HomeController', [
+    controller('angulared.HomeController', [
         "$scope",
         function ($scope) {}
     ]);
@@ -10,6 +10,6 @@ home.config(function ($stateProvider) {
     $stateProvider.
         state('home', {
             url: "/home",
-            templateUrl: 'partials/home.html'
+            templateUrl: 'home/home.html'
         });
 });

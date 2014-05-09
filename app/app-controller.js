@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('AngularChromeAppShowcase').
-    controller('IndexController', [
+    controller('angulared.AppController', [
         "$scope",
-        "appInfo",
+        "angulared.appInfo",
         "$state",
         function ($scope, appInfo, $state) {
             $scope.appInfo=appInfo;

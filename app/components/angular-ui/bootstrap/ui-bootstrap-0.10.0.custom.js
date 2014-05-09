@@ -218,7 +218,7 @@ angular.module('ui.bootstrap.accordion', ['ui.bootstrap.collapse'])
     controller:'AccordionController',
     transclude: true,
     replace: false,
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/accordion/accordion.html'
+    templateUrl: 'components/angular-ui/bootstrap/template/accordion/accordion.html'
   };
 })
 
@@ -229,7 +229,7 @@ angular.module('ui.bootstrap.accordion', ['ui.bootstrap.collapse'])
     restrict:'EA',
     transclude:true,              // It transcludes the contents of the directive into the template
     replace: true,                // The element containing the directive will be replaced with the template
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/accordion/accordion-group.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/accordion/accordion-group.html',
     scope:{ heading:'@' },        // Create an isolated scope and interpolate the heading attribute onto this scope
     controller: function() {
       this.setHeading = function(element) {
@@ -316,7 +316,7 @@ angular.module("ui.bootstrap.alert", [])
   return {
     restrict:'EA',
     controller:'AlertController',
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/alert/alert.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/alert/alert.html',
     transclude:true,
     replace:true,
     scope: {
@@ -635,7 +635,7 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
     replace: true,
     controller: 'CarouselController',
     require: 'carousel',
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/carousel/carousel.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/carousel/carousel.html',
     scope: {
       interval: '=',
       noTransition: '=',
@@ -714,7 +714,7 @@ function CarouselDemoCtrl($scope) {
     restrict: 'EA',
     transclude: true,
     replace: true,
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/carousel/slide.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/carousel/slide.html',
     scope: {
     },
     link: function (scope, element, attrs, carouselCtrl) {
@@ -965,7 +965,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.position'])
   return {
     restrict: 'EA',
     replace: true,
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/datepicker/datepicker.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/datepicker/datepicker.html',
     scope: {
       dateDisabled: '&'
     },
@@ -1302,7 +1302,7 @@ function ($compile, $parse, $document, $position, dateFilter, datepickerPopupCon
     restrict:'EA',
     replace: true,
     transclude: true,
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/datepicker/popup.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/datepicker/popup.html',
     link:function (scope, element, attrs) {
       element.bind('click', function(event) {
         event.preventDefault();
@@ -1428,7 +1428,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
     return {
       restrict: 'EA',
       replace: true,
-      templateUrl: 'lib/vendor/angular-ui/bootstrap/template/modal/backdrop.html',
+      templateUrl: 'components/angular-ui/bootstrap/template/modal/backdrop.html',
       link: function (scope) {
 
         scope.animate = false;
@@ -1450,7 +1450,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
       },
       replace: true,
       transclude: true,
-      templateUrl: 'lib/vendor/angular-ui/bootstrap/template/modal/window.html',
+      templateUrl: 'components/angular-ui/bootstrap/template/modal/window.html',
       link: function (scope, element, attrs) {
         scope.windowClass = attrs.windowClass || '';
 
@@ -1830,7 +1830,7 @@ angular.module('ui.bootstrap.pagination', [])
       onSelectPage:' &'
     },
     controller: 'PaginationController',
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/pagination/pagination.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/pagination/pagination.html',
     replace: true,
     link: function(scope, element, attrs, paginationCtrl) {
 
@@ -1950,7 +1950,7 @@ angular.module('ui.bootstrap.pagination', [])
       onSelectPage:' &'
     },
     controller: 'PaginationController',
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/pagination/pager.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/pagination/pager.html',
     replace: true,
     link: function(scope, element, attrs, paginationCtrl) {
 
@@ -2342,7 +2342,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
     restrict: 'EA',
     replace: true,
     scope: { content: '@', placement: '@', animation: '&', isOpen: '&' },
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/tooltip/tooltip-popup.html'
+    templateUrl: 'components/angular-ui/bootstrap/template/tooltip/tooltip-popup.html'
   };
 })
 
@@ -2355,7 +2355,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
     restrict: 'EA',
     replace: true,
     scope: { content: '@', placement: '@', animation: '&', isOpen: '&' },
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/tooltip/tooltip-html-unsafe-popup.html'
+    templateUrl: 'components/angular-ui/bootstrap/template/tooltip/tooltip-html-unsafe-popup.html'
   };
 })
 
@@ -2375,7 +2375,7 @@ angular.module( 'ui.bootstrap.popover', [ 'ui.bootstrap.tooltip' ] )
     restrict: 'EA',
     replace: true,
     scope: { title: '@', content: '@', placement: '@', animation: '&', isOpen: '&' },
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/popover/popover.html'
+    templateUrl: 'components/angular-ui/bootstrap/template/popover/popover.html'
   };
 })
 
@@ -2446,7 +2446,7 @@ angular.module('ui.bootstrap.progressbar', ['ui.bootstrap.transition'])
         require: 'progress',
         scope: {},
         template: '<div class="progress" ng-transclude></div>'
-        //templateUrl: 'lib/vendor/angular-ui/bootstrap/template/progressbar/progress.html' // Works in AngularJS 1.2
+        //templateUrl: 'components/angular-ui/bootstrap/template/progressbar/progress.html' // Works in AngularJS 1.2
     };
 })
 
@@ -2460,7 +2460,7 @@ angular.module('ui.bootstrap.progressbar', ['ui.bootstrap.transition'])
             value: '=',
             type: '@'
         },
-        templateUrl: 'lib/vendor/angular-ui/bootstrap/template/progressbar/bar.html',
+        templateUrl: 'components/angular-ui/bootstrap/template/progressbar/bar.html',
         link: function(scope, element, attrs, progressCtrl) {
             progressCtrl.addBar(scope, element);
         }
@@ -2477,7 +2477,7 @@ angular.module('ui.bootstrap.progressbar', ['ui.bootstrap.transition'])
             value: '=',
             type: '@'
         },
-        templateUrl: 'lib/vendor/angular-ui/bootstrap/template/progressbar/progressbar.html',
+        templateUrl: 'components/angular-ui/bootstrap/template/progressbar/progressbar.html',
         link: function(scope, element, attrs, progressCtrl) {
             progressCtrl.addBar(scope, angular.element(element.children()[0]));
         }
@@ -2551,7 +2551,7 @@ angular.module('ui.bootstrap.rating', [])
       onLeave: '&'
     },
     controller: 'RatingController',
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/rating/rating.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/rating/rating.html',
     replace: true
   };
 });
@@ -2633,7 +2633,7 @@ angular.module('ui.bootstrap.tabs', [])
     replace: true,
     scope: {},
     controller: 'TabsetController',
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/tabs/tabset.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/tabs/tabset.html',
     link: function(scope, element, attrs) {
       scope.vertical = angular.isDefined(attrs.vertical) ? scope.$parent.$eval(attrs.vertical) : false;
       scope.justified = angular.isDefined(attrs.justified) ? scope.$parent.$eval(attrs.justified) : false;
@@ -2733,7 +2733,7 @@ angular.module('ui.bootstrap.tabs', [])
     require: '^tabset',
     restrict: 'EA',
     replace: true,
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/tabs/tab.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/tabs/tab.html',
     transclude: true,
     scope: {
       heading: '@',
@@ -2867,7 +2867,7 @@ angular.module('ui.bootstrap.timepicker', [])
     require:'?^ngModel',
     replace: true,
     scope: {},
-    templateUrl: 'lib/vendor/angular-ui/bootstrap/template/timepicker/timepicker.html',
+    templateUrl: 'components/angular-ui/bootstrap/template/timepicker/timepicker.html',
     link: function(scope, element, attrs, ngModel) {
       if ( !ngModel ) {
         return; // do nothing if no ng-model
@@ -3382,7 +3382,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
         select:'&'
       },
       replace:true,
-      templateUrl: 'lib/vendor/angular-ui/bootstrap/template/typeahead/typeahead-popup.html',
+      templateUrl: 'components/angular-ui/bootstrap/template/typeahead/typeahead-popup.html',
       link:function (scope, element, attrs) {
 
         scope.templateUrl = attrs.templateUrl;

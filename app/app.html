@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en" data-ng-app="AngularChromeAppShowcase" data-ng-csp data-ng-controller="IndexController">
+<html lang="en" data-ng-app="AngularChromeAppShowcase" data-ng-csp data-ng-controller="angulared.AppController">
 <head>
     <meta charset="utf-8">
     <title>{{appInfo.name}} ({{appInfo.version}})</title>
 
-    <link id="theme" rel="stylesheet" href="lib/vendor/bootswatch/{{appInfo.theme.name}}/bootstrap.min.css">
-    <link rel="stylesheet" href="lib/vendor/angular/angular-csp.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link id="theme" rel="stylesheet" href="components/bootswatch/{{appInfo.theme.name}}/bootstrap.min.css">
+    <link rel="stylesheet" href="components/angular/angular-csp.css">
+    <link rel="stylesheet" href="app.css">
 
 </head>
 <body >
@@ -56,22 +56,20 @@
 
     </footer>
 
-    <script type="text/javascript" src='js/environment/setup.js'></script>
-    <script type="text/javascript" src='lib/vendor/jquery/jquery-2.1.0.js'></script>
-    <script type="text/javascript" src='lib/vendor/angular/angular.min.js'></script>
-    <script type="text/javascript" src='lib/vendor/angular/angular-route.min.js'></script>
-    <script type="text/javascript" src='lib/vendor/angular/angular-resource.min.js'></script>
-    <script type="text/javascript" src='lib/vendor/angular/angular-sanitize.min.js'></script>
-    <script type="text/javascript" src='lib/vendor/angular-ui/ui-router/angular-ui-router.min.js'></script>
-    <script type="text/javascript" src='lib/vendor/angular-ui/bootstrap/ui-bootstrap-0.10.0.custom.js'></script>
+    <!-- @todo <script type="text/javascript" src='components/closure-library/closure/goog/base.js'></script> -->
+    <script type="text/javascript" src='components/jquery/jquery-2.1.0.js'></script>
+    <script type="text/javascript" src='components/angular/angular.min.js'></script>
+    <script type="text/javascript" src='components/angular/angular-route.min.js'></script>
+    <script type="text/javascript" src='components/angular/angular-resource.min.js'></script>
+    <script type="text/javascript" src='components/angular/angular-sanitize.min.js'></script>
+    <script type="text/javascript" src='components/angular-ui/ui-router/angular-ui-router.min.js'></script>
+    <script type="text/javascript" src='components/angular-ui/bootstrap/ui-bootstrap-0.10.0.custom.js'></script>
     <script type="text/javascript" src='app.js'></script>
-    <script type="text/javascript" src='js/services/base.js'></script>
-    <script type="text/javascript" src='js/filters/base.js'></script>
-    <script type="text/javascript" src='js/directives/base.js'></script>
-    <script type="text/javascript" src='js/controllers/index-controller.js'></script>
-    <script type="text/javascript" src='js/controllers/showcase-controller.js'></script>
-    <script type="text/javascript" src='js/controllers/home-controller.js'></script>
-    <script type="text/javascript" src='js/controllers/showcase/angular-ui-bootstrap/demos/accordion-controller.js'></script>
-    <script type="text/javascript" src='js/controllers/showcase/angular-ui-bootstrap/demos/alert-controller.js'></script>
+    <script type="text/javascript" src='info/info-service.js'></script>
+    <script type="text/javascript" src='app-controller.js'></script>
+    <script type="text/javascript" src='showcase/showcase-controller.js'></script>
+    <script type="text/javascript" src='home/home-controller.js'></script>
+    <script type="text/javascript" src='showcase/angular-ui-bootstrap/accordian/accordion-controller.js'></script>
+    <script type="text/javascript" src='showcase/angular-ui-bootstrap/alert/alert-controller.js'></script>
 </body>
 </html>

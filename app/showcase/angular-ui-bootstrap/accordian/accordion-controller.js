@@ -1,19 +1,19 @@
 'use strict';
 
 angular.module('AngularChromeAppShowcase').
-    controller('AccordionController',
+    controller('angulared.AccordionController', [
         "$scope",
         function($scope) {
             $scope.oneAtATime = true;
-console.log('here');
+
             $scope.groups = [
                 {
-                    title: "Dynamic Group Header - 1",
-                    content: "Dynamic Group Body - 1"
+                    title: 'Dynamic Group Header - 1',
+                    content: 'Dynamic Group Body - 1'
                 },
                 {
-                    title: "Dynamic Group Header - 2",
-                    content: "Dynamic Group Body - 2"
+                    title: 'Dynamic Group Header - 2',
+                    content: 'Dynamic Group Body - 2'
                 }
             ];
 
@@ -23,4 +23,10 @@ console.log('here');
                 var newItemNo = $scope.items.length + 1;
                 $scope.items.push('Item ' + newItemNo);
             };
-        });
+
+            $scope.status = {
+                isFirstOpen: true,
+                isFirstDisabled: false
+            };
+        }
+    ]);
