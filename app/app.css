@@ -1,54 +1,59 @@
 /* See "CSS" sub-header @ http://angular-ui.github.io/bootstrap/#/getting_started */
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
-
-.nav .glyphicon{
-    margin-right:5px;
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
 }
 
-html, body{
-    min-height:100%;
-    min-width:100%;
+.nav .glyphicon {
+    margin-right: 5px;
 }
 
-html{
-    height:100%;
-    overflow-y:auto;
+html, body {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+html {
+    height: 100%;
+    overflow-y: auto;
 }
 
 body {
     padding-top: 65px;
-    box-sizing:border-box;
-    height:100%;
+    box-sizing: border-box;
+    height: 100%;
 
 }
+
 /* @todo move component specific styles into component folder e.g. app/home/home.css */
-[data-ng-controller="angulared.HomeController"]{
-    padding:0 20px 20px 20px;
+[data-ng-controller="rightAngles.HomeController"] {
+    padding: 0 20px 20px 20px;
 }
 
-header.top-nav{
+header.top-nav {
 
 }
-.main-ui-pane{
-    height:100%;
-    width:100%;
+
+.main-ui-pane {
+    height: 100%;
+    width: 100%;
 }
-[data-ng-controller="angulared.ShowcaseController"]{
+
+[data-ng-controller="rightAngles.ShowcaseController"] {
 
 }
 
 aside[ui-view="demos"] {
-    padding-top:10px;
-    width:230px;
-    height:100%;
-    vertical-align:top;
-    display:inline-block;
-    padding-top:10px;
+    padding-top: 10px;
+    width: 230px;
+    height: 100%;
+    vertical-align: top;
+    display: inline-block;
+    padding-top: 10px;
 }
 
 [ui-view="detail"] {
-    padding-top:10px;
-    width:calc(100% - 235px);
-    vertical-align:top;
-    display:inline-block;
+    padding-top: 10px;
+    width: calc(100% - 235px);
+    vertical-align: top;
+    display: inline-block;
 }

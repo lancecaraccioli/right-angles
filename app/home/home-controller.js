@@ -1,11 +1,10 @@
 'use strict';
-
 var home = angular.module('AngularChromeAppShowcase').
-    controller('angulared.HomeController', [
+    controller('rightAngles.HomeController', [
         "$scope",
-        function ($scope) {}
+        function ($scope) {
+        }
     ]);
-
 home.config(function ($stateProvider) {
     $stateProvider.
         state('home', {

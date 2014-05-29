@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('AngularChromeAppShowcase').
-    controller('angulared.AccordionController', [
+    controller('rightAngles.AccordionController', [
         "$scope",
         function($scope) {
             $scope.oneAtATime = true;

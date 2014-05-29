@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "Angulared",
-    "description":"Angular JS (& Friends) ui explorer/skeleton for Chrome Packaged Apps. This includes the popular UI-Bootstrap and UI-Router components from Angular UI and Bootstrap themes created by bootswatch.com.",
-    "version": "1.0",
+    "name": "Right Angles",
+    "description":"Angular JS & Friends UI Showcase for Chrome Packaged Apps. This includes the popular UI-Bootstrap and UI-Router components from Angular UI and Bootstrap themes created by bootswatch.com.",
+    "version": "0.1.0",
     "icons": {
         "128": "app/index/img/icon_128.png"
     },
