@@ -1,5 +1,5 @@
 'use strict';
-angular.module('AngularChromeAppShowcase').
+angular.module('RightAnglesShowcase').
     controller('OpenSourceCreditsController', [
         "$scope",
         "appInfo",

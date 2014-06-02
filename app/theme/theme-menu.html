@@ -1,0 +1,20 @@
+<div class="app-menu" data-ng-controller="rightAngles.themeController">
+    <tabset vertical="true" >
+        <tab ng-repeat="theme in themes"
+             active="theme.active"
+             disabled="theme.disabled"
+             select="selectTheme(theme.name)">
+            <tab-heading>
+                <span>{{theme.heading}}</span>
+            </tab-heading>
+        </tab>
+        <tab>
+            <tab-heading>
+                <a target="_blank" href="http://bootswatch.com">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                    Themes<br/>by bootswatch.com
+                </a>
+            </tab-heading>
+        </tab>
+    </tabset>
+</div>

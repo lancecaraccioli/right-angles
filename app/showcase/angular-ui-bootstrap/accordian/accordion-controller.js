@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('AngularChromeAppShowcase').
+angular.module('RightAnglesShowcase').
     controller('rightAngles.AccordionController', [
         "$scope",
         function($scope) {

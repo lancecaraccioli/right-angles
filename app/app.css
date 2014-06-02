@@ -1,3 +1,17 @@
+html, body {
+    min-height: 100%;
+    min-width: 100%;
+}
+html {
+    height: 100%;
+    overflow-y: auto;
+}
+body {
+    padding-top: 43px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
 /* See "CSS" sub-header @ http://angular-ui.github.io/bootstrap/#/getting_started */
 .nav, .pagination, .carousel, .panel-title a {
     cursor: pointer;
@@ -7,42 +21,98 @@
     margin-right: 5px;
 }
 
-html, body {
-    min-height: 100%;
-    min-width: 100%;
+.app{
+    height:100%;
 }
-
-html {
-    height: 100%;
-    overflow-y: auto;
+/* overwrite silly navbar styles */
+.app-nav .navbar-header,
+.app-nav .navbar-brand,
+.app-nav .navbar-brand-text,
+.app-nav.navbar nav,
+.app-nav .nav-tabs,
+.app-nav .nav-tabs>li,
+.app-nav .navbar-nav {
+    display: inline-block;
+    float:none;
 }
-
-body {
-    padding-top: 65px;
-    box-sizing: border-box;
-    height: 100%;
+.app-nav .nav-tabs{
+    margin-bottom:-1px;
+}
+.app-nav .navbar-header{
+    height:100%;
+    vertical-align:top;
+}
+.app-nav .navbar-brand{
+    position:absolute;
+    left:0;
+    height:100%;
+    width:14%;
+    min-width:120px;
+    padding:0;
+    text-align: center;
+}
+.app-nav .navbar-brand-text{
+    position:relative;
+    white-space:nowrap;
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
 
 }
+.app-nav.navbar{
+    min-height:initial;
+}
+.app-nav.navbar nav{
+    margin-left:14%;
+}
+.app-nav .navbar-nav{
+    margin:0;
+    white-space: nowrap;
+}
+.app-nav .tab-content{
+    display:none;
+}
+/**/
+
 
 /* @todo move component specific styles into component folder e.g. app/home/home.css */
 [data-ng-controller="rightAngles.HomeController"] {
     padding: 0 20px 20px 20px;
 }
 
-header.top-nav {
-
+.app {
+    position:relative;
 }
 
-.main-ui-pane {
+.app-body-pane {
     height: 100%;
     width: 100%;
+}
+
+.app-menu-toggle {
+    position:absolute;
+    height:100%;
+    right:0;
+    top:0;
+}
+.app-menu-panel{
+    position:absolute;
+    /*left:100%;*/
+    right:0;
+    top:0;
+    display:none;
+    height:100%;
+}
+.app-menu-panel.open{
+    display:block;
+    overflow-y:auto;
 }
 
 [data-ng-controller="rightAngles.ShowcaseController"] {
 
 }
 
-aside[ui-view="demos"] {
+[data-ui-view="demos"] {
     padding-top: 10px;
     width: 230px;
     height: 100%;
@@ -51,7 +121,7 @@ aside[ui-view="demos"] {
     padding-top: 10px;
 }
 
-[ui-view="detail"] {
+[data-ui-view="detail"] {
     padding-top: 10px;
     width: calc(100% - 235px);
     vertical-align: top;

@@ -1,13 +1,11 @@
 'use strict';
-var AngularChromeAppShowcase = angular.module('AngularChromeAppShowcase', [
+angular.module('RightAnglesShowcase', [
     'ngResource',
     'ngSanitize',
     'ui.router',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'rightAngles.theme'
 ]);
-AngularChromeAppShowcase.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/home");
-});
 
 
 

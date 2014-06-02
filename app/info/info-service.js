@@ -1,7 +1,6 @@
 'use strict';
-angular.module('AngularChromeAppShowcase').
-    value("rightAngles.appInfo", angular.extend({
-        theme: {"name": "slate"},
-        brand: "rightAngles"
+angular.module('RightAnglesShowcase')
+    .value("rightAngles.appInfo", angular.extend({
+        brand: "Right Angles"
     }, chrome.runtime.getManifest()));
 

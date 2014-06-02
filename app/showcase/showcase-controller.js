@@ -1,5 +1,5 @@
 'use strict';
-angular.module('AngularChromeAppShowcase').
+angular.module('RightAnglesShowcase').
     controller('rightAngles.ShowcaseController', [
         "$scope",
         "$state",
@@ -51,14 +51,11 @@ angular.module('AngularChromeAppShowcase').
         }
     ]).config(function ($stateProvider) {
         $stateProvider.
-            state('showcase', {
-                url: "/showcase",
-                templateUrl: 'showcase/showcase.html'
-            }).
+
             state('showcase.vendor', {
                 url: "/:vendor",
                 views: {
-                    detail: {
+                    "detail": {
                         templateUrl: function (stateParams) {
                             return 'showcase/' + stateParams.vendor + '/intro.html';
                         }

@@ -1,8 +1,8 @@
 <div data-ng-controller="rightAngles.ShowcaseController">
     <tabset>
-        <tab ng-repeat="vendor in ui.vendors" heading="{{vendor.label}}" active="tab.active" disabled="tab.disabled"
+        <tab ng-repeat="vendor in ui.vendors" heading="{{vendor.label}}" active="vendor.active" disabled="vendor.disabled"
              select="vendorSelected(vendor)"></tab>
     </tabset>
-    <aside class="showcase-sidebar" ui-view="demos"></aside>
-    <section ui-view="detail"></section>
+    <aside class="showcase-sidebar" data-ui-view="demos"></aside>
+    <section data-ui-view="detail"></section>
 </div>
