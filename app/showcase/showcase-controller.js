@@ -5,8 +5,8 @@ angular.module('RightAnglesShowcase').
         "$state",
         "$stateParams",
         function ($scope, $state) {
-            $scope.ui = {
-                vendors: [
+            $scope
+                .vendors = [
                     {
                         "name": "angular-ui-bootstrap",
                         "label": 'Angular UI Bootstrap Directives',
@@ -36,31 +36,38 @@ angular.module('RightAnglesShowcase').
                     {
                         "name": "angular-js",
                         "label": 'Angular JS (todo)',
-                        demos: []
+                        demos: [
+                            {
+                                "name": "foo",
+                                "label": 'Foo'
+                            }
+                        ]
                     }
-                ]
-            };
+                ];
             $scope.vendorSelected = function (vendor) {
-                $scope.vendor = vendor;
-                $state.go('showcase.vendor', {vendor: $scope.vendor.name});
+                if (vendor.name !== null) {
+                    $scope.vendor = vendor;
+                    $state.go('showcase.vendor', {vendor: $scope.vendor.name});
+                }
             };
             $scope.demoSelected = function (demo) {
-                $scope.demo = demo;
-                $state.go('showcase.vendor.demo', {demo: $scope.demo.name});
+                if (demo.name !== null) {
+                    $scope.demo = demo;
+                    $state.go('showcase.vendor.demo', {vendor:$scope.vendor.name, demo: $scope.demo.name});
+                }
             };
         }
     ]).config(function ($stateProvider) {
         $stateProvider.
-
             state('showcase.vendor', {
                 url: "/:vendor",
                 views: {
-                    "detail": {
+                    "detail@showcase": {
                         templateUrl: function (stateParams) {
                             return 'showcase/' + stateParams.vendor + '/intro.html';
                         }
                     },
-                    "demos": {
+                    "demos@showcase": {
                         templateUrl: function (stateParams) {
                             return 'showcase/' + stateParams.vendor + '/demos.html';
                         }

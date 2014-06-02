@@ -24,70 +24,6 @@ body {
 .app{
     height:100%;
 }
-/* overwrite silly navbar styles */
-.app-nav .navbar-header,
-.app-nav .navbar-brand,
-.app-nav .navbar-brand-text,
-.app-nav.navbar nav,
-.app-nav .nav-tabs,
-.app-nav .nav-tabs>li,
-.app-nav .navbar-nav {
-    display: inline-block;
-    float:none;
-}
-.app-nav .nav-tabs{
-    margin-bottom:-1px;
-}
-.app-nav .navbar-header{
-    height:100%;
-    vertical-align:top;
-}
-.app-nav .navbar-brand{
-    position:absolute;
-    left:0;
-    height:100%;
-    width:14%;
-    min-width:120px;
-    padding:0;
-    text-align: center;
-}
-.app-nav .navbar-brand-text{
-    position:relative;
-    white-space:nowrap;
-    top:50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-
-}
-.app-nav.navbar{
-    min-height:initial;
-}
-.app-nav.navbar nav{
-    margin-left:14%;
-}
-.app-nav .navbar-nav{
-    margin:0;
-    white-space: nowrap;
-}
-.app-nav .tab-content{
-    display:none;
-}
-/**/
-
-
-/* @todo move component specific styles into component folder e.g. app/home/home.css */
-[data-ng-controller="rightAngles.HomeController"] {
-    padding: 0 20px 20px 20px;
-}
-
-.app {
-    position:relative;
-}
-
-.app-body-pane {
-    height: 100%;
-    width: 100%;
-}
 
 .app-menu-toggle {
     position:absolute;
@@ -97,7 +33,6 @@ body {
 }
 .app-menu-panel{
     position:absolute;
-    /*left:100%;*/
     right:0;
     top:0;
     display:none;
@@ -108,17 +43,12 @@ body {
     overflow-y:auto;
 }
 
-[data-ng-controller="rightAngles.ShowcaseController"] {
-
-}
-
 [data-ui-view="demos"] {
     padding-top: 10px;
     width: 230px;
     height: 100%;
     vertical-align: top;
     display: inline-block;
-    padding-top: 10px;
 }
 
 [data-ui-view="detail"] {
@@ -127,3 +57,4 @@ body {
     vertical-align: top;
     display: inline-block;
 }
+

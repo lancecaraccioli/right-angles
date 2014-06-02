@@ -22,7 +22,7 @@ angular.module('RightAnglesShowcase').
                 console.log('theme was chosen:%s', $scope.themeName);
             });
             $scope.themeName = themeService.getSelectedTheme().name;
-
+            $state.go('home');
         }
     ])
     .config(function ($stateProvider) {
@@ -30,22 +30,16 @@ angular.module('RightAnglesShowcase').
             .state('showcase', {
                 url: "/showcase",
                 views: {
-                    "app-body": {
+                    "appBody": {
                         templateUrl: 'showcase/showcase.html'
-                    },
-                    "app-menu": {
-                        templateUrl: 'theme/theme-menu.html'
                     }
                 }
             })
             .state('home', {
                 url: "/home",
                 views: {
-                    "app-body": {
+                    "appBody": {
                         templateUrl: 'home/home.html'
-                    },
-                    "app-menu": {
-                        templateUrl: 'theme/theme-menu.html'
                     }
                 }
             })

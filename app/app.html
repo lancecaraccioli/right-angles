@@ -41,15 +41,16 @@
 </header>
 
 <section class="app">
-    <section data-ui-view="app-body" class="app-body-pane"></section>
-    <section data-ui-view="app-menu" class="app-menu-panel" data-ng-class="{open: showMenu}"></section>
+    <section data-ui-view="appBody" class="app-body-pane"></section>
+    <section data-ui-view="appMenu" class="app-menu-panel" data-ng-class="{open: showMenu}">
+        <ng-include src="'theme/theme-menu.html'"></ng-include>
+    </section>
 </section>
 
 <footer>
 
 </footer>
 
-<!-- @todo <script type="text/javascript" src='components/closure-library/closure/goog/base.js'></script> -->
 <script type="text/javascript" src='bower_components/jquery/dist/jquery.min.js'></script>
 <script type="text/javascript" src='bower_components/angular/angular.min.js'></script>
 <script type="text/javascript" src='bower_components/angular-resource/angular-resource.min.js'></script>

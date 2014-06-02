@@ -3,7 +3,7 @@
         <tab ng-repeat="theme in themes"
              active="theme.active"
              disabled="theme.disabled"
-             select="selectTheme(theme.name)">
+             ng-click="selectTheme(theme)">
             <tab-heading>
                 <span>{{theme.heading}}</span>
             </tab-heading>
