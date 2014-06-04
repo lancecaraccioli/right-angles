@@ -86,7 +86,8 @@ angular.module('rightAngles.showcase')
             getSelectedShowcase:function(){
                 if (!showcaseService.selectedShowcase){
                     var firstShowcaseKey = Object.keys(showcaseService.showcases)[0];
-                    showcaseService.selectedShowcase = showcaseService.showcases[firstShowcaseKey];
+                    showcaseService.selectedShowcase = showcaseService.getShowcase(firstShowcaseKey);
+                    showcaseService.selectedShowcase.active = true;
                 }
                 return showcaseService.selectedShowcase;
             },
@@ -116,7 +117,8 @@ angular.module('rightAngles.showcase')
                 var selectedShowcase = showcaseService.getSelectedShowcase();
                 if (!selectedShowcase.selectedDemo){
                     var firstDemoKey = Object.keys(selectedShowcase.demos)[0];
-                    selectedShowcase.selectedDemo = selectedShowcase.demos[firstDemoKey];
+                    selectedShowcase.selectedDemo = showcaseService.getDemo(firstDemoKey);
+                    selectedShowcase.selectedDemo.active = true;
                 }
                 return selectedShowcase.selectedDemo;
             }

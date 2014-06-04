@@ -4,7 +4,9 @@
              heading="{{showcase.label}}"
              active="showcase.active"
              disabled="showcase.disabled"
-             ng-click="showcaseSelected(showcase)"></tab>
+             ng-click="showcaseSelected(showcase)"
+             select="showcaseRawSelected(showcase)"
+                ></tab>
     </tabset>
     <aside class="showcase-sidebar"
            data-ui-view="demos"></aside>

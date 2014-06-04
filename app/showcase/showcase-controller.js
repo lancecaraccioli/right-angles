@@ -13,24 +13,27 @@
                         showcase:showcaseService.getSelectedShowcase().name,
                         demo: showcaseService.getSelectedDemo().name
                     };
+                    $scope.selectedShowcase = showcaseService.getSelectedShowcase();
 
                     $state.go(showcaseStateNames.DEMO, demoState);
                 }
 
+                $scope.showcases = showcaseService.getShowcases();
+
                 $scope.showcaseSelected = function (showcase) {
                     showcaseService.selectShowcase(showcase);
-                    $scope.selectedShowcase = showcaseService.getSelectedShowcase();
 
                     redirectToDemo();
+                };
+                $scope.showcaseRawSelected = function (showcase) {
+                };
+                $scope.demoRawSelected = function (demo) {
                 };
                 $scope.demoSelected = function (demo) {
                     showcaseService.selectDemo(demo);
 
                     redirectToDemo();
                 };
-
-                $scope.showcases = showcaseService.getShowcases();
-                $scope.selectedShowcase = showcaseService.getSelectedShowcase();
 
                 redirectToDemo();
             }
