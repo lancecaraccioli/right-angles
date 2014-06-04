@@ -6,7 +6,7 @@
         'ui.router',
         'ui.bootstrap',
         'mgcrea.ngStrap',
-        'rightAngles.theme',
+        'theme',
         'showcase',
         'showcase.angularUiBootstrap',
         'rightAngles.navbar'

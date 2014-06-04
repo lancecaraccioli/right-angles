@@ -1,8 +1,8 @@
 'use strict';
-angular.module('rightAngles.theme').
-    controller('rightAngles.themeController', [
+angular.module('theme').
+    controller('theme.themeController', [
         "$scope",
-        "rightAngles.themeService",
+        "theme.themeService",
         function ($scope, themeService) {
             /**
              * Changes the current theme
@@ -16,13 +16,14 @@ angular.module('rightAngles.theme').
             };
 
             $scope.changeTheme = function(theme){
-                $scope.selectedTheme = theme;
+                $scope.selectedTheme = themeService.getTheme(theme);
                 $scope.$emit('theme:chosen');
             };
 
+            $scope.themes = themeService.getThemes();
+
             var initialStatePromise = themeService.getStorageState();
             initialStatePromise.then(function(selectedTheme){
-                $scope.themes = themeService.getThemes();
                 $scope.changeTheme(selectedTheme);
             }, function(reason){
                 console.warn('Failed to retrieve Initial Theme State from storage. Reason:%s', reason);

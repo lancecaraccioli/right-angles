@@ -1,6 +1,6 @@
 'use strict';
-angular.module('rightAngles.theme')
-    .factory('rightAngles.themeService', ['$q', function($q){
+angular.module('theme')
+    .factory('theme.themeService', ['$q', function($q){
         var themeService = {
             themes: {
                 "amelia":    {"name": "amelia", "heading": "Amelia"},
@@ -21,18 +21,25 @@ angular.module('rightAngles.theme')
             },
             selectedTheme:null,
             selectTheme:function(theme){
+                var selectedTheme = themeService.getSelectedTheme();
+                selectedTheme.active = false;
+                var newlySelectedTheme = themeService.getTheme(theme);
+                if (!newlySelectedTheme){
+                    newlySelectedTheme = selectedTheme;
+                }
+                newlySelectedTheme.active = true;
+                themeService.selectedTheme = newlySelectedTheme;
+                themeService.saveStorageState();
+            },
+            getTheme:function(theme){
                 var themeName;
                 if (typeof theme === 'string'){
                     themeName = theme;
                 } else if (typeof theme === 'object') {
                     themeName = theme.name;
                 }
-                if (themeService.selectedTheme){
-                    themeService.selectedTheme.active=false;
-                }
                 if (themeName && themeService.themes[themeName]){
-                    themeService.selectedTheme = themeService.themes[themeName];
-                    themeService.selectedTheme.active = true;
+                    return themeService.themes[themeName];
                 }
             },
 
@@ -53,19 +60,29 @@ angular.module('rightAngles.theme')
             saveStorageState:function(){
                 chrome.storage.sync.set(themeService.getState());
             },
+            /**
+             * If the state is already initalized then there is no need to retrieve
+             * the state from storage
+             */
+            stateInitialized:false,
             getStorageState:function(){
                 var deferred = $q.defer();
-                //chrome.storage.sync.clear();//clear storage during debugging
-                chrome.storage.sync.get(themeService.getState() /*defaults*/, function(storedState){
-                    if (storedState['themeState']) {
-                        if(storedState['themeState'].selectedTheme){
-                            themeService.selectTheme(storedState['themeState'].selectedTheme);
+                if (themeService.stateInitialized){
+                    deferred.resolve(themeService.getSelectedTheme());
+                } else {
+                    //chrome.storage.sync.clear();//clear storage during debugging
+                    chrome.storage.sync.get(themeService.getState() /*defaults*/, function (storedState) {
+                        if (storedState['themeState']) {
+                            if (storedState['themeState'].selectedTheme) {
+                                themeService.selectTheme(storedState['themeState'].selectedTheme);
+                            }
+                            themeService.stateInitialized = true;
+                            deferred.resolve(themeService.getSelectedTheme());
+                        } else {
+                            deferred.reject('An invalid initial theme state was retrieved');
                         }
-                        deferred.resolve(themeService.getSelectedTheme());
-                    } else {
-                        deferred.reject('An invalid initial theme state was retrieved');
-                    }
-                });
+                    });
+                }
                 return deferred.promise;
             }
         };

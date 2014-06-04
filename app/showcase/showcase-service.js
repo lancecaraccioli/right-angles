@@ -95,8 +95,6 @@ angular.module('showcase')
                 showcase = showcaseService.getShowcase(showcase) || showcaseService.getSelectedShowcase();
                 var selectedDemo = showcaseService.getSelectedDemo(showcase);
                 selectedDemo.active = false;
-                console.group('selectDemo');
-                console.log('previously selectedDemo:%O',selectedDemo);
 
                 var newlySelectedDemo = showcaseService.getDemo(demo, showcase);
                 if (!newlySelectedDemo){
@@ -104,9 +102,7 @@ angular.module('showcase')
                 }
 
                 newlySelectedDemo.active = true;
-                console.log('newly selectedDemo:%O',newlySelectedDemo);
 
-                console.groupEnd();
                 showcase.selectedDemo = newlySelectedDemo;
                 showcaseService.saveStorageState();
 
@@ -138,30 +134,35 @@ angular.module('showcase')
             saveStorageState:function(){
                 chrome.storage.sync.set(showcaseService.getState());
             },
+            stateInitialized:false,
             getStorageState:function(){
                 var deferred = $q.defer();
-                //chrome.storage.sync.clear();//clear storage during debugging
-                chrome.storage.sync.get(showcaseService.getState() /*defaults*/, function(storedState){
-                    if (storedState['showcaseState']) {
-                        angular.forEach(storedState['showcaseState'], function(showcase, showcaseName){
-                            if (showcase.active){
-                                showcaseService.selectShowcase(showcase.name);
-                            }
-                            angular.forEach(showcase.demos, function(demo, demoName){
-                                if (demo.active){
-                                    showcaseService.selectDemo(demo.name, showcase.name);
+                if (showcaseService.stateInitialized){
+                    deferred.resolve(showcaseService.getSelectedTheme());
+                } else {
+                    //chrome.storage.sync.clear();//clear storage during debugging
+                    chrome.storage.sync.get(showcaseService.getState() /*defaults*/, function (storedState) {
+                        if (storedState['showcaseState']) {
+                            angular.forEach(storedState['showcaseState'], function (showcase, showcaseName) {
+                                if (showcase.active) {
+                                    showcaseService.selectShowcase(showcase.name);
                                 }
+                                angular.forEach(showcase.demos, function (demo, demoName) {
+                                    if (demo.active) {
+                                        showcaseService.selectDemo(demo.name, showcase.name);
+                                    }
+                                });
+                                //ensure a demo is selective for the showcase
+                                showcaseService.getSelectedDemo(showcase.name);
                             });
-                            //ensure a demo is selective for the showcase
-                            showcaseService.getSelectedDemo(showcase.name);
-                        });
-                        //ensure a showcase is selected
-                        showcaseService.getSelectedShowcase();
-                        deferred.resolve(showcaseService.getState()['showcaseState']);
-                    } else {
-                        deferred.reject('An invalid initial state was retrieved');
-                    }
-                });
+                            //ensure a showcase is selected
+                            showcaseService.getSelectedShowcase();
+                            deferred.resolve(showcaseService.getState()['showcaseState']);
+                        } else {
+                            deferred.reject('An invalid initial state was retrieved');
+                        }
+                    });
+                }
                 return deferred.promise;
             }
         };

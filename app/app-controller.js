@@ -4,7 +4,7 @@ angular.module('RightAnglesShowcase').
         "$scope",
         "$state",
         "rightAngles.appInfo",
-        "rightAngles.themeService",
+        "theme.themeService",
         "rightAngles.navbarService",
         function ($scope, $state, appInfo, themeService, navbarService) {
             $scope.appInfo = appInfo;
@@ -27,9 +27,9 @@ angular.module('RightAnglesShowcase').
                 }
             };
             $scope.$on('theme:chosen', function(){
-                $scope.themeName = themeService.getSelectedTheme().name;
+                $scope.selectedThemeName = themeService.getSelectedTheme().name;
             });
-            $scope.themeName = themeService.getSelectedTheme().name;
+            $scope.selectedThemeName = themeService.getSelectedTheme().name;
             $state.go('home');
         }
     ])
