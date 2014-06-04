@@ -19,9 +19,6 @@ angular.module('rightAngles.theme')
                 "united":    {"name": "united", "heading": "United"},
                 "yeti":      {"name": "yeti", "heading": "Yeti"}
             },
-            credits: {
-                "bootswatch": {"name": "bootswatch", "heading":"Bootswatch Themes", glyph:"", href:"http://bootswatch.com"}
-            },
             selectedTheme:null,
             selectTheme:function(theme){
                 var themeName;
@@ -49,9 +46,6 @@ angular.module('rightAngles.theme')
             },
             getThemes:function(){
                 return themeService.themes;
-            },
-            getCredits:function(){
-                return themeService.credits;
             },
             getState:function(){
                 return {'themeState':{selectedTheme:themeService.getSelectedTheme()}};
