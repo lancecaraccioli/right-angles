@@ -1,41 +1,47 @@
 'use strict';
 (function(){
-    angular.module('rightAngles.showcase')
-        .controller('rightAngles.ShowcaseController', [
+    angular.module('showcase')
+        .controller('showcase.ShowcaseController', [
             "$scope",
             "$state",
             "$stateParams",
-            "rightAngles.showcaseService",
-            "rightAngles.showcase.STATES",
-            function ($scope, $state, $stateParams, showcaseService, showcaseStateNames) {
+            "showcase.showcaseService",
+            "showcase.STATES",
+            function ($scope, $state, $stateParams, showcaseService, showcaseStateNames, initialShowcase) {
                 function redirectToDemo(){
-                    var demoState = {
-                        showcase:showcaseService.getSelectedShowcase().name,
-                        demo: showcaseService.getSelectedDemo().name
-                    };
                     $scope.selectedShowcase = showcaseService.getSelectedShowcase();
+
+                    var demoState = {
+                        showcase:$scope.selectedShowcase.name,
+                        demo: $scope.selectedShowcase.selectedDemo.name
+                    };
 
                     $state.go(showcaseStateNames.DEMO, demoState);
                 }
-
-                $scope.showcases = showcaseService.getShowcases();
 
                 $scope.showcaseSelected = function (showcase) {
                     showcaseService.selectShowcase(showcase);
 
                     redirectToDemo();
                 };
-                $scope.showcaseRawSelected = function (showcase) {
-                };
-                $scope.demoRawSelected = function (demo) {
-                };
+
                 $scope.demoSelected = function (demo) {
                     showcaseService.selectDemo(demo);
 
                     redirectToDemo();
                 };
 
-                redirectToDemo();
+                var initialStatePromise = showcaseService.getStorageState();
+                initialStatePromise.then(function(storedState){
+                    $scope.showcases = storedState;
+                    redirectToDemo();
+                }, function(reason){
+                    console.warn('Failed to retrieve Initial State from storage. Reason:%s', reason);
+                    redirectToDemo();
+                }, function(update){
+                    //progress currently do nothing
+                });
+
             }
         ]).config(function ($stateProvider) {
             $stateProvider.
@@ -51,6 +57,7 @@
                             templateUrl: function () {
                                 return 'showcase/showcase-demos.html';
                             }
+
                         }
                     }
                 }).

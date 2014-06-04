@@ -1,2 +1,2 @@
 'use strict';
-angular.module('rightAngles.showcase', []);
+angular.module('showcase', []);

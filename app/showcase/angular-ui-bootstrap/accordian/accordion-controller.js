@@ -1,8 +1,7 @@
 'use strict';
 
-angular.module('RightAnglesShowcase').
-    controller('rightAngles.AccordionController', [
-        "$scope",
+angular.module('showcase.angularUiBootstrap')
+    .controller('showcase.angularUiBootstrap.AccordionController',
         function($scope) {
             $scope.oneAtATime = true;
 
@@ -29,4 +28,4 @@ angular.module('RightAnglesShowcase').
                 isFirstDisabled: false
             };
         }
-    ]);
+    );

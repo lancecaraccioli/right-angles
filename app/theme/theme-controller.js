@@ -12,12 +12,23 @@ angular.module('rightAngles.theme').
              */
             $scope.selectTheme = function (theme) {
                 themeService.selectTheme(theme);
-                $scope.selectedTheme = themeService.getSelectedTheme();
+                $scope.changeTheme(theme);
+            };
+
+            $scope.changeTheme = function(theme){
+                $scope.selectedTheme = theme;
                 $scope.$emit('theme:chosen');
             };
 
-            $scope.themes = themeService.getThemes();
-            $scope.credits = themeService.getCredits();
+            var initialStatePromise = themeService.getStorageState();
+            initialStatePromise.then(function(selectedTheme){
+                $scope.themes = themeService.getThemes();
+                $scope.changeTheme(selectedTheme);
+            }, function(reason){
+                console.warn('Failed to retrieve Initial Theme State from storage. Reason:%s', reason);
+            }, function(update){
+                //progress currently do nothing
+            });
 
         }
     ]);

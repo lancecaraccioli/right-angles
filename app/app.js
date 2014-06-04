@@ -7,7 +7,8 @@
         'ui.bootstrap',
         'mgcrea.ngStrap',
         'rightAngles.theme',
-        'rightAngles.showcase',
+        'showcase',
+        'showcase.angularUiBootstrap',
         'rightAngles.navbar'
     ]);
 

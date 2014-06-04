@@ -1,11 +1,11 @@
 'use strict';
-angular.module('rightAngles.showcase')
-    .value('rightAngles.showcase.STATES', {
+angular.module('showcase')
+    .value('showcase.STATES', {
         'ROOT':'showcases',
         'SHOWCASE':'showcases.showcase',
         'DEMO':'showcases.showcase.demo'
     })
-    .factory('rightAngles.showcaseService', [function(){
+    .factory('showcase.showcaseService', ['$q',function($q){
         /**
          * @todo refactor into showcase and demo rich models once a Domain architecture is established
          * @type {{showcases: {angular-ui-bootstrap: {name: string, label: string, demos: {accordian: {name: string, label: string}, alert: {name: string, label: string}, buttons: {name: string, label: string}, carousel: {name: string, label: string}, collapse: {name: string, label: string}}}, angular-js: {name: string, label: string, demos: {foo: {name: string, label: string}, bar: {name: string, label: string}, baz: {name: string, label: string}}}}, selectedShowcase: null, selectShowcase: Function, getShowcases: Function, getShowcase: Function, getSelectedShowcase: Function, hasSelectedShowcase: Function, selectedDemo: null, selectDemo: Function, getDemos: Function, getDemo: Function, getSelectedDemo: Function, hasSelectedDemo: Function, hasDemo: Function}}
@@ -63,11 +63,11 @@ angular.module('rightAngles.showcase')
                 selectedShowcase.active = false;
                 var newlySelectedShowcase = showcaseService.getShowcase(showcase);
                 if (!newlySelectedShowcase){
-                    console.warn('Showcase (%s) could not be found. Selecting previously selected showcase', typeof showcase === 'string'?showcase:(showcase || {name:'unknown'}).name);
                     newlySelectedShowcase = selectedShowcase;
                 }
                 newlySelectedShowcase.active = true;
                 showcaseService.selectedShowcase = newlySelectedShowcase;
+                showcaseService.saveStorageState();
             },
             getShowcases:function(){
                 return showcaseService.showcases;
@@ -91,36 +91,78 @@ angular.module('rightAngles.showcase')
                 }
                 return showcaseService.selectedShowcase;
             },
-            selectDemo:function(demo){
-                var selectedDemo = showcaseService.getSelectedDemo();
+            selectDemo:function(demo, showcase){
+                showcase = showcaseService.getShowcase(showcase) || showcaseService.getSelectedShowcase();
+                var selectedDemo = showcaseService.getSelectedDemo(showcase);
                 selectedDemo.active = false;
-                var newlySelectedDemo = showcaseService.getDemo(demo);
+                console.group('selectDemo');
+                console.log('previously selectedDemo:%O',selectedDemo);
+
+                var newlySelectedDemo = showcaseService.getDemo(demo, showcase);
                 if (!newlySelectedDemo){
-                    console.warn('Demo "%s" could not be found. Selecting previously selected demo', typeof demo === 'string'?demo:(demo || {name:'unknown'}).name);
                     newlySelectedDemo = selectedDemo;
                 }
+
                 newlySelectedDemo.active = true;
-                showcaseService.getSelectedShowcase().selectedDemo = newlySelectedDemo;
+                console.log('newly selectedDemo:%O',newlySelectedDemo);
+
+                console.groupEnd();
+                showcase.selectedDemo = newlySelectedDemo;
+                showcaseService.saveStorageState();
 
                 return showcaseService;
             },
-            getDemo:function(demo){
+            getDemo:function(demo, showcase){
+                showcase = showcaseService.getShowcase(showcase) || showcaseService.getSelectedShowcase();
                 var demoName;
                 if (typeof demo === 'object') {
                     demoName = demo.name;
                 } else if (typeof demo === 'string') {
                     demoName = demo;
                 }
-                return showcaseService.getSelectedShowcase().demos[demoName];
+                return showcase.demos[demoName];
             },
-            getSelectedDemo:function(){
-                var selectedShowcase = showcaseService.getSelectedShowcase();
-                if (!selectedShowcase.selectedDemo){
-                    var firstDemoKey = Object.keys(selectedShowcase.demos)[0];
-                    selectedShowcase.selectedDemo = showcaseService.getDemo(firstDemoKey);
-                    selectedShowcase.selectedDemo.active = true;
+            getSelectedDemo:function(showcase){
+                showcase = showcaseService.getShowcase(showcase) || showcaseService.getSelectedShowcase();
+                if (!showcase.selectedDemo){
+                    var firstDemoKey = Object.keys(showcase.demos)[0];
+                    showcase.selectedDemo = showcaseService.getDemo(firstDemoKey, showcase.name);
+                    showcase.selectedDemo.active = true;
                 }
-                return selectedShowcase.selectedDemo;
+
+                return showcase.selectedDemo;
+            },
+            getState:function(){
+                return {'showcaseState':showcaseService.getShowcases()};
+            },
+            saveStorageState:function(){
+                chrome.storage.sync.set(showcaseService.getState());
+            },
+            getStorageState:function(){
+                var deferred = $q.defer();
+                //chrome.storage.sync.clear();//clear storage during debugging
+                chrome.storage.sync.get(showcaseService.getState() /*defaults*/, function(storedState){
+                    if (storedState['showcaseState']) {
+                        angular.forEach(storedState['showcaseState'], function(showcase, showcaseName){
+                            if (showcase.active){
+                                showcaseService.selectShowcase(showcase.name);
+                            }
+                            angular.forEach(showcase.demos, function(demo, demoName){
+                                if (demo.active){
+                                    showcaseService.selectDemo(demo.name, showcase.name);
+                                }
+                            });
+                            //ensure a demo is selective for the showcase
+                            showcaseService.getSelectedDemo(showcase.name);
+                        });
+                        //ensure a showcase is selected
+                        showcaseService.getSelectedShowcase();
+                        deferred.resolve(showcaseService.getState()['showcaseState']);
+                    } else {
+                        deferred.reject('An invalid initial state was retrieved');
+                    }
+                });
+                return deferred.promise;
             }
         };
 

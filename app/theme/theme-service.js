@@ -30,12 +30,21 @@ angular.module('rightAngles.theme')
                 } else if (typeof theme === 'object') {
                     themeName = theme.name;
                 }
+                if (themeService.selectedTheme){
+                    themeService.selectedTheme.active=false;
+                }
                 if (themeName && themeService.themes[themeName]){
                     themeService.selectedTheme = themeService.themes[themeName];
+                    themeService.selectedTheme.active = true;
                 }
             },
 
             getSelectedTheme:function(){
+                if (!themeService.selectedTheme){
+                    themeService.selectedTheme = themeService.themes['slate'];
+                    themeService.selectedTheme.active = true;
+                }
+
                 return themeService.selectedTheme;
             },
             getThemes:function(){
@@ -43,9 +52,29 @@ angular.module('rightAngles.theme')
             },
             getCredits:function(){
                 return themeService.credits;
+            },
+            getState:function(){
+                return {'themeState':{selectedTheme:themeService.getSelectedTheme()}};
+            },
+            saveStorageState:function(){
+                chrome.storage.sync.set(themeService.getState());
+            },
+            getStorageState:function(){
+                var deferred = $q.defer();
+                //chrome.storage.sync.clear();//clear storage during debugging
+                chrome.storage.sync.get(themeService.getState() /*defaults*/, function(storedState){
+                    if (storedState['themeState']) {
+                        if(storedState['themeState'].selectedTheme){
+                            themeService.selectTheme(storedState['themeState'].selectedTheme);
+                        }
+                        deferred.resolve(themeService.getSelectedTheme());
+                    } else {
+                        deferred.reject('An invalid initial theme state was retrieved');
+                    }
+                });
+                return deferred.promise;
             }
         };
-        themeService.selectTheme('superhero');
 
         return themeService;
     }]);
