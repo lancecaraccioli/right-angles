@@ -10,7 +10,8 @@
   "keywords": [
     "angular.js",
     "angular-ui",
-    "angular-ui-bootstrap",
+    "angular-bootstrap",
+    "angular-strap",
     "angular-ui-router",
     "bootswatch",
     "bootstrap"
@@ -31,6 +32,7 @@
     "angular-sanitize": "~1.2.16",
     "angular-ui-router": "~0.2.10",
     "angular-bootstrap": "~0.11.0",
+    "angular-strap": "~2.0.0",
     "bootswatch": "~3.1.1+1",
     "jquery": "~2.1.1"
   }

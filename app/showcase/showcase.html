@@ -1,10 +1,10 @@
 <div data-ng-controller="rightAngles.ShowcaseController">
-    <tabset>
+    <tabset type="pills">
         <tab ng-repeat="showcase in showcases"
              heading="{{showcase.label}}"
              active="showcase.active"
              disabled="showcase.disabled"
-             select="showcaseSelected(showcase)"></tab>
+             ng-click="showcaseSelected(showcase)"></tab>
     </tabset>
     <aside class="showcase-sidebar"
            data-ui-view="demos"></aside>

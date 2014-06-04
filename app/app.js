@@ -1,29 +1,29 @@
 'use strict';
-angular.module('RightAnglesShowcase', [
-    'ngResource',
-    'ngSanitize',
-    'ui.router',
-    'ui.bootstrap',
-    'rightAngles.theme',
-    'rightAngles.showcase'
-]).run(function($rootScope){
-    /*$rootScope.$on('$stateChangeStart',
-        function(event, toState, toParams, fromState, fromParams){
-            console.log(toState);
-            $rootScope.stateIsChanging = true;
-        }
-    );
-    $rootScope.$on('$stateChangeSuccess',
-        function(event, toState, toParams, fromState, fromParams){
-            $rootScope.stateIsChanging = false;
-        }
-    );
-    $rootScope.$on('$stateChangeError',
-        function(event, toState, toParams, fromState, fromParams, error){
-            $rootScope.stateIsChanging = false;
-        }
-    );*/
-});
+(function(){
+    var App = angular.module('RightAnglesShowcase', [
+        'ngResource',
+        'ngSanitize',
+        'ui.router',
+        'ui.bootstrap',
+        'mgcrea.ngStrap',
+        'rightAngles.theme',
+        'rightAngles.showcase',
+        'rightAngles.navbar'
+    ]);
 
+    App.directive('appNav', function(){
+        return {
+            replace:true,
+            restrict: 'EAC',
+            templateUrl: 'app-nav.html'
+        }
+    });
 
-
+    App.directive('appMenu', function(){
+        return {
+            replace:true,
+            restrict: 'E',
+            templateUrl: 'app-menu.html'
+        }
+    });
+})();

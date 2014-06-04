@@ -13,61 +13,35 @@
 
 </head>
 <body>
-<header class="app-nav navbar navbar-default navbar-fixed-top">
-    <div class="navbar-header">
-        <a class="brand navbar-brand"><span class="navbar-brand-text">{{appInfo.brand}}</span></a>
-    </div>
-    <nav>
-        <tabset class="nav navbar-nav">
-            <tab class="nav-tab"
-                 ng-repeat="item in nav.items"
-                 active="item.active"
-                 disabled="item.disabled"
-                 select="navItemSelected(item)">
-                <tab-heading>
-                    <span class="glyphicon glyphicon-{{item.glyph}}"></span>{{item.heading}}
-                </tab-heading>
-            </tab>
-        </tabset>
-
-        <button type="button"
-                class="btn btn-primary app-menu-toggle"
-                data-btn-checkbox
-                data-ng-model="showMenu">
-                <!--todo data-ng-controller="rightAngles.menu"-->
-            <span class="glyphicon glyphicon-cog"></span>
-        </button>
-    </nav>
-</header>
-
-<section class="app">
-    <section data-ui-view="appBody" class="app-body-pane"></section>
-    <section data-ui-view="appMenu" class="app-menu-panel" data-ng-class="{open: showMenu}">
-        <ng-include src="'theme/theme-menu.html'"></ng-include>
+    <header data-ng-include="'app-nav.html'"></header>
+    <section class="app">
+        <section data-ui-view="appBody" class="app-body-pane"></section>
+        <section data-ui-view="appMenu" class="app-menu-panel" data-ng-class="{open: showMenu}"></section>
     </section>
-</section>
 
-<footer>
+    <footer></footer>
 
-</footer>
-
-<script type="text/javascript" src='bower_components/jquery/dist/jquery.min.js'></script>
-<script type="text/javascript" src='bower_components/angular/angular.min.js'></script>
-<script type="text/javascript" src='bower_components/angular-resource/angular-resource.min.js'></script>
-<script type="text/javascript" src='bower_components/angular-sanitize/angular-sanitize.min.js'></script>
-<script type="text/javascript" src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
-<script type="text/javascript" src='bower_components/angular-bootstrap/ui-bootstrap-tpls.js'></script>
-<script type="text/javascript" src='app.js'></script>
-<script type="text/javascript" src='info/info-service.js'></script>
-<script type="text/javascript" src='app-controller.js'></script>
-<script type="text/javascript" src='showcase/showcase.js'></script>
-<script type="text/javascript" src='showcase/showcase-service.js'></script>
-<script type="text/javascript" src='showcase/showcase-controller.js'></script>
-<script type="text/javascript" src='home/home-controller.js'></script>
-<script type="text/javascript" src='theme/theme.js'></script>
-<script type="text/javascript" src='theme/theme-service.js'></script>
-<script type="text/javascript" src='theme/theme-controller.js'></script>
-<script type="text/javascript" src='showcase/angular-ui-bootstrap/accordian/accordion-controller.js'></script>
-<script type="text/javascript" src='showcase/angular-ui-bootstrap/alert/alert-controller.js'></script>
+    <script type="text/javascript" src='bower_components/jquery/dist/jquery.min.js'></script>
+    <script type="text/javascript" src='bower_components/angular/angular.min.js'></script>
+    <script type="text/javascript" src='bower_components/angular-resource/angular-resource.min.js'></script>
+    <script type="text/javascript" src='bower_components/angular-sanitize/angular-sanitize.min.js'></script>
+    <script type="text/javascript" src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+    <script type="text/javascript" src='bower_components/angular-bootstrap/ui-bootstrap-tpls.js'></script>
+    <script type="text/javascript" src='bower_components/angular-strap/dist/angular-strap.min.js'></script>
+    <script type="text/javascript" src='bower_components/angular-strap/dist/angular-strap.tpl.min.js'></script>
+    <script type="text/javascript" src='app.js'></script>
+    <script type="text/javascript" src='info/info-service.js'></script>
+    <script type="text/javascript" src='app-controller.js'></script>
+    <script type="text/javascript" src='showcase/showcase.js'></script>
+    <script type="text/javascript" src='showcase/showcase-service.js'></script>
+    <script type="text/javascript" src='showcase/showcase-controller.js'></script>
+    <script type="text/javascript" src='home/home-controller.js'></script>
+    <script type="text/javascript" src='theme/theme.js'></script>
+    <script type="text/javascript" src='theme/theme-service.js'></script>
+    <script type="text/javascript" src='theme/theme-controller.js'></script>
+    <script type="text/javascript" src='navbar/navbar.js'></script>
+    <script type="text/javascript" src='navbar/navbar-service.js'></script>
+    <script type="text/javascript" src='showcase/angular-ui-bootstrap/accordian/accordion-controller.js'></script>
+    <script type="text/javascript" src='showcase/angular-ui-bootstrap/alert/alert-controller.js'></script>
 </body>
 </html>

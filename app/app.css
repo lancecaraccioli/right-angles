@@ -7,9 +7,13 @@ html {
     overflow-y: auto;
 }
 body {
-    padding-top: 43px;
     box-sizing: border-box;
-    height: 100%;
+    height:1px;
+    min-height: 100%;
+}
+
+section.app{
+    height:100%;
 }
 
 /* See "CSS" sub-header @ http://angular-ui.github.io/bootstrap/#/getting_started */
@@ -21,9 +25,6 @@ body {
     margin-right: 5px;
 }
 
-.app{
-    height:100%;
-}
 
 .app-menu-toggle {
     position:absolute;
@@ -44,7 +45,6 @@ body {
 }
 
 [data-ui-view="demos"] {
-    padding-top: 10px;
     width: 230px;
     height: 100%;
     vertical-align: top;
@@ -52,7 +52,6 @@ body {
 }
 
 [data-ui-view="detail"] {
-    padding-top: 10px;
     width: calc(100% - 235px);
     vertical-align: top;
     display: inline-block;

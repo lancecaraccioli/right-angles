@@ -5,17 +5,26 @@ angular.module('RightAnglesShowcase').
         "$state",
         "rightAngles.appInfo",
         "rightAngles.themeService",
-        function ($scope, $state, appInfo, themeService) {
+        "rightAngles.navbarService",
+        function ($scope, $state, appInfo, themeService, navbarService) {
             $scope.appInfo = appInfo;
             $scope.showMenu=false;
             $scope.nav = {
-                items: [
-                    {"name": "home", "heading": "", "glyph": "home"},
-                    {"name": "showcases", "heading": "Showcase", "glyph": "briefcase"}
-                ]
+                items: navbarService.getItems(),
+                brand: navbarService.getBrand()
             };
+            $scope.hasDropdownMenu = function(navItem){
+                return navbarService.hasDropdownMenu(navItem);
+            };
+            $scope.getDropdownMenuTemplateUrl = function(navItem){
+                return navbarService.getDropdownMenuTemplateUrl(navItem);
+            };
+
             $scope.navItemSelected = function (navItem) {
-                $state.go(navItem.name);
+                if (!$scope.hasDropdownMenu(navItem)){
+                    navbarService.selectItem(navItem);
+                    $state.go(navItem.name);
+                }
             };
             $scope.$on('theme:chosen', function(){
                 $scope.themeName = themeService.getSelectedTheme().name;

@@ -17,6 +17,7 @@ angular.module('rightAngles.theme').
             };
 
             $scope.themes = themeService.getThemes();
+            $scope.credits = themeService.getCredits();
 
         }
     ]);
