@@ -1,6 +1,6 @@
 'use strict';
 angular.module('rightAngles.theme')
-    .factory('rightAngles.themeService', [function(){
+    .factory('rightAngles.themeService', ['$q', function($q){
         var themeService = {
             themes: {
                 "amelia":    {"name": "amelia", "heading": "Amelia"},
