@@ -1,89 +1,66 @@
 'use strict';
-angular.module('RightAnglesShowcase').
-    controller('rightAngles.ShowcaseController', [
-        "$scope",
-        "$state",
-        "$stateParams",
-        function ($scope, $state) {
-            $scope
-                .vendors = [
-                    {
-                        "name": "angular-ui-bootstrap",
-                        "label": 'Angular UI Bootstrap Directives',
-                        "demos": [
-                            {
-                                "name": "accordian",
-                                "label": 'Accordian'
-                            },
-                            {
-                                "name": "alert",
-                                "label": 'Alert'
-                            },
-                            {
-                                "name": "buttons",
-                                "label": 'Buttons'
-                            },
-                            {
-                                "name": "carousel",
-                                "label": 'Carousel'
-                            },
-                            {
-                                "name": "collapse",
-                                "label": 'Collapse'
-                            }
-                        ]
-                    },
-                    {
-                        "name": "angular-js",
-                        "label": 'Angular JS (todo)',
-                        demos: [
-                            {
-                                "name": "foo",
-                                "label": 'Foo'
-                            }
-                        ]
-                    }
-                ];
-            $scope.vendorSelected = function (vendor) {
-                if (vendor.name !== null) {
-                    $scope.vendor = vendor;
-                    $state.go('showcase.vendor', {vendor: $scope.vendor.name});
-                }
-            };
-            $scope.demoSelected = function (demo) {
-                if (demo.name !== null) {
-                    $scope.demo = demo;
-                    $state.go('showcase.vendor.demo', {vendor:$scope.vendor.name, demo: $scope.demo.name});
-                }
-            };
-        }
-    ]).config(function ($stateProvider) {
-        $stateProvider.
-            state('showcase.vendor', {
-                url: "/:vendor",
-                views: {
-                    "detail@showcase": {
-                        templateUrl: function (stateParams) {
-                            return 'showcase/' + stateParams.vendor + '/intro.html';
-                        }
-                    },
-                    "demos@showcase": {
-                        templateUrl: function (stateParams) {
-                            return 'showcase/' + stateParams.vendor + '/demos.html';
-                        }
-                    }
-                }
-            }).
-            state('showcase.vendor.demo', {
-                url: "/:demo",
-                views: {
-                    'detail@showcase': {
-                        templateUrl: function (stateParams) {
-                            return 'showcase/' + stateParams.vendor + '/' + stateParams.demo + '/' + stateParams.demo + '.html';
-                        }
-                    }
-                }
-            })
-        ;
-    });
+(function(){
+    angular.module('rightAngles.showcase')
+        .controller('rightAngles.ShowcaseController', [
+            "$scope",
+            "$state",
+            "$stateParams",
+            "rightAngles.showcaseService",
+            "rightAngles.showcase.STATES",
+            function ($scope, $state, $stateParams, showcaseService, showcaseStateNames) {
+                function redirectToDemo(){
+                    var demoState = {
+                        showcase:showcaseService.getSelectedShowcase().name,
+                        demo: showcaseService.getSelectedDemo().name
+                    };
 
+                    $state.go(showcaseStateNames.DEMO, demoState);
+                }
+
+                $scope.showcaseSelected = function (showcase) {
+                    showcaseService.selectShowcase(showcase);
+                    $scope.selectedShowcase = showcaseService.getSelectedShowcase();
+
+                    redirectToDemo();
+                };
+                $scope.demoSelected = function (demo) {
+                    showcaseService.selectDemo(demo);
+
+                    redirectToDemo();
+                };
+
+                $scope.showcases = showcaseService.getShowcases();
+                $scope.selectedShowcase = showcaseService.getSelectedShowcase();
+
+                redirectToDemo();
+            }
+        ]).config(function ($stateProvider) {
+            $stateProvider.
+                state('showcases.showcase', {
+                    url: "/:showcase",
+                    views: {
+                        "detail@showcases": {
+                            templateUrl: function () {
+                                return 'showcase/showcase-demo.html';
+                            }
+                        },
+                        "demos@showcases": {
+                            templateUrl: function () {
+                                return 'showcase/showcase-demos.html';
+                            }
+                        }
+                    }
+                }).
+                state('showcases.showcase.demo', {
+                    url: "/:demo",
+                    views: {
+                        'demo@showcases.showcase': {
+                            templateUrl: function (stateParams) {
+                                return 'showcase/' + stateParams.showcase + '/' + stateParams.demo + '/' + stateParams.demo + '.html';
+                            }
+                        }
+                    }
+                })
+            ;
+        });
+})();

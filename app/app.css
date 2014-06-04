@@ -34,7 +34,7 @@ body {
 .app-menu-panel{
     position:absolute;
     right:0;
-    top:0;
+    top:51px;
     display:none;
     height:100%;
 }

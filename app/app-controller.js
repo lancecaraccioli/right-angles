@@ -11,7 +11,7 @@ angular.module('RightAnglesShowcase').
             $scope.nav = {
                 items: [
                     {"name": "home", "heading": "", "glyph": "home"},
-                    {"name": "showcase", "heading": "Showcase", "glyph": "briefcase"}
+                    {"name": "showcases", "heading": "Showcase", "glyph": "briefcase"}
                 ]
             };
             $scope.navItemSelected = function (navItem) {
@@ -19,7 +19,6 @@ angular.module('RightAnglesShowcase').
             };
             $scope.$on('theme:chosen', function(){
                 $scope.themeName = themeService.getSelectedTheme().name;
-                console.log('theme was chosen:%s', $scope.themeName);
             });
             $scope.themeName = themeService.getSelectedTheme().name;
             $state.go('home');
@@ -27,7 +26,7 @@ angular.module('RightAnglesShowcase').
     ])
     .config(function ($stateProvider) {
         $stateProvider
-            .state('showcase', {
+            .state('showcases', {//todo use constant "rightAngles.showcase.STATES".ROOT,
                 url: "/showcase",
                 views: {
                     "appBody": {
@@ -43,6 +42,5 @@ angular.module('RightAnglesShowcase').
                     }
                 }
             })
-
     });
 

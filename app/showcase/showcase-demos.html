@@ -1,7 +1,7 @@
 <tabset vertical="true">
-    <tab ng-repeat="demo in vendor.demos"
+    <tab ng-repeat="demo in selectedShowcase.demos"
          heading="{{demo.label}}"
          active="demo.active"
          disabled="demo.disabled"
-         select="demoSelected(demo)"></tab>
+         ng-click="demoSelected(demo)"></tab>
 </tabset>
