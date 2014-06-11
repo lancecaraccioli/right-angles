@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default " role="navigation" data-bs-navbar>
+<nav class="navbar navbar-default " role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="brand navbar-brand" >
@@ -13,7 +13,6 @@
                 <a  data-ng-if="hasDropdownMenu(item)"
                     role="button"
                     data-bs-dropdown
-                    data-has-dropdown-menu={{hasDropdownMenu(item)}}
                     data-template="{{getDropdownMenuTemplateUrl(item)}}">
                     <span class="glyphicon glyphicon-{{item.glyph}}"></span>
                     <span>{{item.heading}}

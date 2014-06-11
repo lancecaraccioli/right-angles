@@ -17,6 +17,7 @@ angular.module('theme').
 
             $scope.changeTheme = function(theme){
                 $scope.selectedTheme = themeService.getTheme(theme);
+                $scope.dropdown={selectedName:$scope.selectedTheme.name};
                 $scope.$emit('theme:chosen');
             };
 
