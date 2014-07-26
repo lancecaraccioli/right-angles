@@ -1,0 +1,10 @@
+{
+  "options": {
+    "jshintrc": ".jshintrc"
+  },
+  "source": [
+    "<%= source.scripts.window %>",
+    "<%= source.scripts.tests %>",
+    "<%= source.scripts.background %>"
+  ]
+}

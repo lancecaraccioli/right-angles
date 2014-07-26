@@ -1,12 +1,12 @@
 {
   "name": "right-angles",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/lancecaraccioli/right-angles",
   "authors": [
     "Lance Caraccioli <lance.caraccioli@gmail.com>"
   ],
   "description": "Angular JS & Friends UI Showcase for Chrome Packaged Apps",
-  "main": "app/app.js",
+  "main": "src/app/app.js",
   "keywords": [
     "angular.js",
     "angular-ui",
@@ -18,22 +18,18 @@
   ],
   "license": "MIT",
   "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "app/bower_components",
-    "test",
-    "tests"
-  ],
+  "ignore": [],
   "dependencies": {
-    "angular": "~1.2.16",
+    "angular": "~1.2.21",
+    "angular-animate": "~1.2",
+    "angular-bootstrap": "~0.11.0",
+    "angular-mocks": "~1.2",
     "angular-resource": "~1.2.16",
     "angular-sanitize": "~1.2.16",
     "angular-ui-router": "~0.2.10",
-    "angular-bootstrap": "~0.11.0",
     "angular-strap": "~2.0.0",
-    "bootswatch": "~3.1.1+1",
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "requirejs": "~2.1.14",
+    "bootswatch": "~3.2.0"
   }
 }

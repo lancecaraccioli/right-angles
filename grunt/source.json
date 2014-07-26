@@ -1,0 +1,24 @@
+{
+  "root": "./app",
+  "scripts": {
+    "bower_components": ["<%= source.root %>/bower_components/**/*.js"],
+    "background": ["<%= source.root %>/background.js"],
+    "tests": [
+      "<%= source.root %>/**/*_test.js",
+      "!<%= source.scripts.bower_components %>",
+      "!<%= source.scripts.background %>"
+    ],
+    "window": [
+      "<%= source.root %>/**/*.js",
+      "!<%= source.scripts.bower_components %>",
+      "!<%= source.scripts.background %>",
+      "!<%= source.scripts.tests %>"
+    ]
+  },
+  "styles": {
+    "window": ["<%= source.root %>/**/*.scss"]
+  },
+  "images": {
+    "window": ["<%= source.root %>/**/*.{gif,jpg,png}"]
+  }
+}

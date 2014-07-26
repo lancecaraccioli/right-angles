@@ -1,0 +1,7 @@
+{
+  "main": {
+    "src": [
+    ],
+    "dest": "temp/app.full.js"
+  }
+}
