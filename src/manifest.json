@@ -1,18 +1,18 @@
 {
-    "manifest_version": 2,
-    "name": "Right Angles",
-    "description":"Angular JS & Friends UI Showcase for Chrome Packaged Apps. This includes the popular UI-Bootstrap and UI-Router components from Angular UI and Bootstrap themes created by bootswatch.com.",
-    "version": "0.0.1",
-    "icons": {
-        "128": "app/img/icon_128.png"
-    },
-    "app": {
-        "background": {
-            "scripts": ["app/background.js"]
-        }
-    },
-    "permissions": [
-        "storage",
-        "fileSystem"
-    ]
+  "manifest_version": 2,
+  "name": "Right Angles",
+  "description": "Angular JS & Friends UI Showcase for Chrome Packaged Apps. This includes the popular UI-Bootstrap and UI-Router components from Angular UI and Bootstrap themes created by bootswatch.com.",
+  "version": "0.0.1",
+  "icons": {
+    "128": "app/img/icon_128.png"
+  },
+  "app": {
+    "background": {
+      "scripts": ["app/background.js"]
+    }
+  },
+  "permissions": [
+    "storage",
+    "fileSystem"
+  ]
 }

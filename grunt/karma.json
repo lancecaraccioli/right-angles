@@ -1,56 +1,21 @@
 {
-  "options": {
-    "frameworks": [
-      "jasmine"
-    ],
-    "files": [
-      "app/bower_components/angular-mocks/angular-mocks.js",
-      [
-        [
-          "app/home/**/*_test.js"
-        ],
-        [
-          "app/img/**/*_test.js"
-        ],
-        [
-          "app/info/**/*_test.js"
-        ],
-        [
-          "app/navbar/**/*_test.js"
-        ],
-        [
-          "app/nursery/**/*_test.js"
-        ],
-        [
-          "app/open-source-credits/**/*_test.js"
-        ],
-        [
-          "app/showcase/**/*_test.js"
-        ],
-        [
-          "app/theme/**/*_test.js"
-        ],
-        "app/*_test.js",
-        "*_test.js"
-      ]
-    ],
-    "logLevel": "ERROR",
-    "reporters": [
-      "mocha"
-    ],
-    "autoWatch": false,
-    "singleRun": true
-  },
-  "all_tests": {
-    "browsers": [
-      "PhantomJS",
-      "Chrome",
-      "Firefox"
-    ]
-  },
-  "during_watch": {
-    "browsers": [
-      "PhantomJS"
-    ]
+  "unit": {
+    "options": {
+      "basePath": "",
+      "frameworks": ["jasmine"],
+      "files": [
+        "<%= source.scripts.app %>",
+        "<%= source.scripts.tests %>"
+      ],
+      "exclude": [],
+      "preprocessors": {},
+      "reporters": ["progress"],
+      "port": 9876,
+      "colors": true,
+      "logLevel": "DEBUG",
+      "autoWatch": true,
+      "browsers": ["PhantomJS"],
+      "singleRun": true
+    }
   }
 }

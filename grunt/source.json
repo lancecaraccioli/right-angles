@@ -1,19 +1,34 @@
 {
-  "root": "./app",
+  "root": "./src/app",
+  "path": {
+    "bower_components": "<%= source.root %>/bower_components"
+  },
+  "html": {
+    "bower_components":["<%= source.path.bower_components %>/**/*.html"],
+    "window": ["<%= source.root %>/**/*.html"]
+  },
   "scripts": {
-    "bower_components": ["<%= source.root %>/bower_components/**/*.js"],
-    "background": ["<%= source.root %>/background.js"],
-    "tests": [
-      "<%= source.root %>/**/*_test.js",
-      "!<%= source.scripts.bower_components %>",
-      "!<%= source.scripts.background %>"
+
+    "bower_components": [
+      "<%= source.path.bower_components %>/**/jquery.min.js",
+      "<%= source.path.bower_components %>/**/angular.min.js",
+      "<%= source.path.bower_components %>/**/!(bootstrap|sizzle).min.js"
     ],
-    "window": [
-      "<%= source.root %>/**/*.js",
-      "!<%= source.scripts.bower_components %>",
-      "!<%= source.scripts.background %>",
-      "!<%= source.scripts.tests %>"
+    "background": ["<%= source.root %>/background.js"],
+    "app": [
+      "<%= source.scripts.bower_components %>",
+      "<%= source.root %>/app.js",
+      "<%= source.root %>/**/info-service.js",
+      "<%= source.root %>/!(bower_components)*/navbar.js",
+      "<%= source.root %>/!(bower_components)*/theme.js",
+      "<%= source.root %>/!(bower_components)*/showcase.js",
+      "<%= source.root %>/!(bower_components)*/*service.js",
+      "<%= source.root %>/!(bower_components)*/*controller.js"
+    ],
+    "tests": [
+      "<%= source.root %>/**/*_test.js"
     ]
+
   },
   "styles": {
     "window": ["<%= source.root %>/**/*.scss"]
