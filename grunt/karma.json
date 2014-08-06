@@ -8,14 +8,20 @@
         "<%= source.scripts.tests %>"
       ],
       "exclude": [],
-      "preprocessors": {},
-      "reporters": ["progress"],
+      "preprocessors": {
+        "<%= source.scripts.ours %>": ["coverage"]
+      },
+      "reporters": ["progress", "coverage"],
       "port": 9876,
       "colors": true,
-      "logLevel": "DEBUG",
+      "logLevel": "INFO",
       "autoWatch": true,
       "browsers": ["PhantomJS"],
-      "singleRun": true
+      "singleRun": true,
+      "coverageReporter": {
+        "type": "html",
+        "dir": "src/app/reports/coverage/"
+      }
     }
   }
 }

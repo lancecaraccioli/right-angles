@@ -51,6 +51,14 @@
               templateUrl: 'home/home.html'
             }
           }
+        })
+        .state('coverage', {
+          url: "/coverage",
+          views: {
+            "appBody": {
+              templateUrl: 'reports/coverage/PhantomJS 1.9.7 (Linux)/index.html'
+            }
+          }
         });
     });
 })();

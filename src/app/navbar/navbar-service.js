@@ -13,6 +13,12 @@
             "heading": "Themes",
             "glyph": "cog",
             "dropdownMenu": {template: 'theme/theme-menu.html'}
+          },
+          {
+            "name": "coverage",
+            "heading": "Test Coverage",
+            "glyph": "stats",
+            "dropdownMenu": {template: 'reports/browser-menu.html'}
           }
         ],
         brand: appInfo.brand,
