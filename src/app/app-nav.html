@@ -1,31 +1,31 @@
 <nav class="navbar navbar-default " role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="brand navbar-brand">
-                <span class="navbar-brand-text">{{nav.brand}}</span>
-            </a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li
-                    data-ng-repeat="item in nav.items"
-                    data-ng-class="{active:item.active, disabled:item.disabled}"
-                    data-ng-click="navItemSelected(item)">
-                <a data-ng-if="hasDropdownMenu(item)"
-                   role="button"
-                   data-bs-dropdown
-                   data-template="{{getDropdownMenuTemplateUrl(item)}}">
-                    <span class="glyphicon glyphicon-{{item.glyph}}"></span>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="brand navbar-brand">
+        <span class="navbar-brand-text">{{nav.brand}}</span>
+      </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li
+        data-ng-repeat="item in nav.items"
+        data-ng-class="{active:item.active, disabled:item.disabled}"
+        data-ng-click="navItemSelected(item)">
+        <a data-ng-if="hasDropdownMenu(item)"
+           role="button"
+           data-bs-dropdown
+           data-template="{{getDropdownMenuTemplateUrl(item)}}">
+          <span class="glyphicon glyphicon-{{item.glyph}}"></span>
                     <span>{{item.heading}}
                         <b class="caret"></b></span>
-                </a>
-                <a role="button" data-ng-if="!hasDropdownMenu(item)">
-                    <span class="glyphicon glyphicon-{{item.glyph}}"></span>
-                    <span>{{item.heading}}</span>
-                </a>
+        </a>
+        <a role="button" data-ng-if="!hasDropdownMenu(item)">
+          <span class="glyphicon glyphicon-{{item.glyph}}"></span>
+          <span>{{item.heading}}</span>
+        </a>
 
-            </li>
+      </li>
 
-        </ul>
-    </div>
-    <!-- /.container-fluid -->
+    </ul>
+  </div>
+  <!-- /.container-fluid -->
 </nav>

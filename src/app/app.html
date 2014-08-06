@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="en" data-ng-app="RightAnglesShowcase" data-ng-csp data-ng-controller="AppController">
 <head>
-    <meta charset="utf-8">
-    <title>{{appInfo.name}} ({{appInfo.version}})</title>
+  <meta charset="utf-8">
+  <title>{{appInfo.name}} ({{appInfo.version}})</title>
 
-    <link id="theme" rel="stylesheet"
-          href="bower_components/bootswatch/amelia/bootstrap.min.css"
-          data-ng-href="bower_components/bootswatch/{{selectedThemeName}}/bootstrap.min.css"
-          data-ng-controller="theme.themeController">
-    <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
-    <link rel="stylesheet" href="app.scss">
+  <link id="theme" rel="stylesheet"
+        href="bower_components/bootswatch/amelia/bootstrap.min.css"
+        data-ng-href="bower_components/bootswatch/{{selectedThemeName}}/bootstrap.min.css"
+        data-ng-controller="theme.themeController">
+  <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+  <link rel="stylesheet" href="app.scss">
 
 </head>
 <body>
 <header data-ng-include="'app-nav.html'"></header>
 <section class="app">
-    <section data-ui-view="appBody" class="app-body-pane"></section>
-    <section data-ui-view="appMenu" class="app-menu-panel" data-ng-class="{open: showMenu}"></section>
+  <section data-ui-view="appBody" class="app-body-pane"></section>
+  <section data-ui-view="appMenu" class="app-menu-panel" data-ng-class="{open: showMenu}"></section>
 </section>
 
 <footer></footer>
