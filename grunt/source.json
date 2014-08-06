@@ -4,7 +4,7 @@
     "bower_components": "<%= source.root %>/bower_components"
   },
   "html": {
-    "bower_components":["<%= source.path.bower_components %>/**/*.html"],
+    "bower_components": ["<%= source.path.bower_components %>/**/*.html"],
     "window": ["<%= source.root %>/**/*.html"]
   },
   "scripts": {

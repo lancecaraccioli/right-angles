@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('dump-config', function (key, expand) {
         var value = grunt.config.get(key);
-        if (expand){
+        if (expand) {
             value = grunt.file.expand(value);
         }
         dump(value);
@@ -36,15 +36,15 @@ module.exports = function (grunt) {
         'code-quality',
         'test'
         /*'sass',
-        'ngtemplates',
-        'cssmin',
-        'concat',
-        'ngmin',
-        'uglify',
-        'copy',
-        'htmlmin',
-        'imagemin',
-        'clean:after'*/
+         'ngtemplates',
+         'cssmin',
+         'concat',
+         'ngmin',
+         'uglify',
+         'copy',
+         'htmlmin',
+         'imagemin',
+         'clean:after'*/
     ]);
 
     grunt.registerTask('test', function () {

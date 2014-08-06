@@ -3,7 +3,7 @@
     "jshintrc": ".jshintrc"
   },
   "source": [
-    "<%= source.scripts.window %>",
+    "<%= source.scripts.app %>",
     "<%= source.scripts.tests %>",
     "<%= source.scripts.background %>"
   ]

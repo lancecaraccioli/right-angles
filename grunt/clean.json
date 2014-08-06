@@ -1,12 +1,12 @@
 {
-    "temp": {
-      "src": [
-        "<%= build.temp %>"
-      ]
-    },
-    "dest": {
-      "src": [
-        "<%= build.dest %>"
-      ]
-    }
+  "temp": {
+    "src": [
+      "<%= build.temp %>"
+    ]
+  },
+  "dest": {
+    "src": [
+      "<%= build.dest %>"
+    ]
+  }
 }

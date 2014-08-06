@@ -1,56 +1,56 @@
 {
-  "name": "right-angles",
-  "version": "0.0.1",
-  "description": "Angular JS & Friends UI Showcase for Chrome Packaged Apps. This includes the popular UI-Bootstrap and UI-Router components from Angular UI and Bootstrap themes created by bootswatch.com.",
-  "homepage": "https://github.com/lancecaraccioli/right-angles",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lancecaraccioli/right-angles.git"
-  },
-  "bugs": {
-    "url": "https://github.com/lancecaraccioli/right-angles/issues",
-    "email": "lance.caraccioli@gmail.com"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Lance Caraccioli",
-    "email": "lance.caraccioli@gmail.com",
-    "url": "https://github.com/lancecaraccioli"
-  },
-  "keywords": [
-    "AngularJS",
-    "angular-ui",
-    "angular-bootstrap",
-    "angular-strap",
-    "angular-ui-router",
-    "bootswatch"
-  ],
-  "devDependencies": {
-    "grunt-angular-templates": "~0.5",
-    "grunt-browser-output": "0.1.0",
-    "grunt-contrib-clean": "~0.6",
-    "grunt-contrib-concat": "~0.5",
-    "grunt-contrib-copy": "~0.5",
-    "grunt-contrib-cssmin": "~0.10",
-    "grunt-contrib-htmlmin": "~0.3",
-    "grunt-contrib-imagemin": "~0.7",
-    "grunt-contrib-jshint": "~0.10",
-    "grunt-contrib-sass": "~0.7.3",
-    "grunt-contrib-uglify": "~0.5",
-    "grunt-contrib-watch": "~0.6",
-    "grunt-jscs-checker": "~0.6.2",
-    "grunt-karma": "~0.8.3",
-    "grunt-ngmin": "0.0.3",
-    "grunt-preprocess": "~4.0.0",
-    "karma": "~0.12.21",
-    "karma-chrome-launcher": "~0.1.4",
-    "karma-firefox-launcher": "~0.1.3",
-    "karma-jasmine": "~0.1.5",
-    "karma-mocha-reporter": "~0.2.8",
-    "karma-phantomjs-launcher": "~0.1.4",
-    "load-grunt-tasks": "~0.6",
-    "load-grunt-config": "~0.12.0",
-    "grunt-istanbul-coverage": "0.0.5"
-  },
-  "dependencies": {}
+    "name": "right-angles",
+    "version": "0.0.1",
+    "description": "Angular JS & Friends UI Showcase for Chrome Packaged Apps. This includes the popular UI-Bootstrap and UI-Router components from Angular UI and Bootstrap themes created by bootswatch.com.",
+    "homepage": "https://github.com/lancecaraccioli/right-angles",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lancecaraccioli/right-angles.git"
+    },
+    "bugs": {
+        "url": "https://github.com/lancecaraccioli/right-angles/issues",
+        "email": "lance.caraccioli@gmail.com"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Lance Caraccioli",
+        "email": "lance.caraccioli@gmail.com",
+        "url": "https://github.com/lancecaraccioli"
+    },
+    "keywords": [
+        "AngularJS",
+        "angular-ui",
+        "angular-bootstrap",
+        "angular-strap",
+        "angular-ui-router",
+        "bootswatch"
+    ],
+    "devDependencies": {
+        "grunt-angular-templates": "~0.5",
+        "grunt-browser-output": "0.1.0",
+        "grunt-contrib-clean": "~0.6",
+        "grunt-contrib-concat": "~0.5",
+        "grunt-contrib-copy": "~0.5",
+        "grunt-contrib-cssmin": "~0.10",
+        "grunt-contrib-htmlmin": "~0.3",
+        "grunt-contrib-imagemin": "~0.7",
+        "grunt-contrib-jshint": "~0.10",
+        "grunt-contrib-sass": "~0.7.3",
+        "grunt-contrib-uglify": "~0.5",
+        "grunt-contrib-watch": "~0.6",
+        "grunt-jscs-checker": "~0.6.2",
+        "grunt-karma": "~0.8.3",
+        "grunt-ngmin": "0.0.3",
+        "grunt-preprocess": "~4.0.0",
+        "karma": "~0.12.21",
+        "karma-chrome-launcher": "~0.1.4",
+        "karma-firefox-launcher": "~0.1.3",
+        "karma-jasmine": "~0.1.5",
+        "karma-mocha-reporter": "~0.2.8",
+        "karma-phantomjs-launcher": "~0.1.4",
+        "load-grunt-tasks": "~0.6",
+        "load-grunt-config": "~0.12.0",
+        "grunt-istanbul-coverage": "0.0.5"
+    },
+    "dependencies": {}
 }
