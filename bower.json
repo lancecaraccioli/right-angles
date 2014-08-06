@@ -30,6 +30,7 @@
     "angular-strap": "~2.0.0",
     "jquery": "~2.1.1",
     "requirejs": "~2.1.14",
-    "bootswatch": "~3.2.0"
+    "bootswatch": "~3.2.0",
+    "mobile-angular-ui": "~1.1.0-beta.29"
   }
 }
