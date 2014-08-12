@@ -5,7 +5,7 @@
     'ngSanitize',
     'ui.router',
     'ui.bootstrap',
-    'mgcrea.ngStrap',
+    //'mgcrea.ngStrap',
     'theme',
     'showcase',
     'showcase.angularUiBootstrap',

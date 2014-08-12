@@ -5,26 +5,23 @@
         <span class="navbar-brand-text">{{nav.brand}}</span>
       </a>
     </div>
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav" >
       <li
         data-ng-repeat="item in nav.items"
         data-ng-class="{active:item.active, disabled:item.disabled}"
-        data-ng-click="navItemSelected(item)">
-        <a data-ng-if="hasDropdownMenu(item)"
-           role="button"
-           data-bs-dropdown
-           data-template="{{getDropdownMenuTemplateUrl(item)}}">
+        dropdown
+        >
+        <a role="button" ng-if="hasDropdownMenu(item)" class="dropdown-toggle">
           <span class="glyphicon glyphicon-{{item.glyph}}"></span>
-                    <span>{{item.heading}}
-                        <b class="caret"></b></span>
+          <span>{{item.heading}} <b class="caret"></b></span>
         </a>
-        <a role="button" data-ng-if="!hasDropdownMenu(item)">
-          <span class="glyphicon glyphicon-{{item.glyph}}"></span>
-          <span>{{item.heading}}</span>
+        <ng-include ng-if="hasDropdownMenu(item)" src="getDropdownMenuTemplateUrl(item)"></ng-include>
+        <a ng-click="navItemSelected(item)"
+          role="button" ng-if="!hasDropdownMenu(item)">
+            <span class="glyphicon glyphicon-{{item.glyph}}"></span>
+            <span>{{item.heading}}</span>
         </a>
-
       </li>
-
     </ul>
   </div>
   <!-- /.container-fluid -->

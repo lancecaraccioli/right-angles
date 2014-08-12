@@ -60,3 +60,6 @@ section.app {
   display: inline-block;
 }
 
+.open>ng-include>.dropdown-menu {
+  display:block;
+}

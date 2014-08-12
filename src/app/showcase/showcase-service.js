@@ -36,6 +36,50 @@
               "collapse": {
                 "name": "collapse",
                 "label": 'Collapse'
+              },
+              "datepicker": {
+                "name": "datepicker",
+                "label": 'datepicker'
+              },
+              "dropdown": {
+                "name": "dropdown",
+                "label": 'dropdown'
+              },
+              "modal": {
+                "name": "modal",
+                "label": 'modal'
+              },
+              "pagination": {
+                "name": "pagination",
+                "label": 'pagination'
+              },
+              "popover": {
+                "name": "popover",
+                "label": 'popover'
+              },
+              "progressbar": {
+                "name": "progressbar",
+                "label": 'progressbar'
+              },
+              "rating": {
+                "name": "rating",
+                "label": 'rating'
+              },
+              "tabs": {
+                "name": "tabs",
+                "label": 'tabs'
+              },
+              "timepicker": {
+                "name": "timepicker",
+                "label": 'timepicker'
+              },
+              "tooltip": {
+                "name": "tooltip",
+                "label": 'tooltip'
+              },
+              "typeahead": {
+                "name": "typeahead",
+                "label": 'typeahead'
               }
             }
           },

@@ -62,7 +62,7 @@
           chrome.storage.sync.set(themeService.getState());
         },
         /**
-         * If the state is already initalized then there is no need to retrieve
+         * If the state is already initialized then there is no need to retrieve
          * the state from storage
          */
         stateInitialized: false,

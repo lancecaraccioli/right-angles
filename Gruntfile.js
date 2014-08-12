@@ -31,6 +31,14 @@ module.exports = function (grunt) {
    */
   grunt.registerTask('code-quality', ['jshint', 'jscs']);
 
+  grunt.registerTask('test', function () {
+    try {
+      grunt.task.run('karma:unit');
+    } catch (e) {
+      grunt.log.error(e.message);
+    }
+  });
+
   grunt.registerTask('build', [
     'clean:temp',
     'code-quality',
@@ -46,14 +54,6 @@ module.exports = function (grunt) {
      'imagemin',
      'clean:after'*/
   ]);
-
-  grunt.registerTask('test', function () {
-    try {
-      grunt.task.run('karma:unit');
-    } catch (e) {
-      grunt.log.error(e.message);
-    }
-  });
 
   grunt.registerTask('default', [
     'build'
