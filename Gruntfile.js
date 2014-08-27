@@ -4,6 +4,7 @@ module.exports = function (grunt) {
   // loads grunt tasks, loads configs from ./grunt, initializes config i.e. grunt.config.init(loadedConfigs)
   require('load-grunt-config')(grunt, {
     postProcess: function (config) {
+      config.pkg = grunt.file.readJSON('package.json');
       config.build.target = grunt.option('target') || config.build.target;
     }
   });
@@ -39,15 +40,22 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('build', function (target) {
-    grunt.config.set('build.target', target || grunt.config.get('build.target'));
+  grunt.registerTask('chrome-app-manifest', function () {
+    var manifestJSON = grunt.config.get('chrome-app-manifest.options.manifest');
+    var manifestDest = grunt.config.get('chrome-app-manifest.options.dest');
+    grunt.file.write(manifestDest, JSON.stringify(manifestJSON));
+  });
 
-    grunt.log.ok('Build. Target:' + grunt.config.get('build.target'));
+  grunt.registerTask('build', function () {
+    var buildTarget = grunt.config.get('build.target');
+    grunt.log.ok('Build. Target:' + buildTarget);
 
     var tasks = [
       'clean:temp',
+      'clean:dest',
       'code-quality',
-      'test'
+      'test',
+      'chrome-app-manifest:' + buildTarget,
       /*'sass',
        'ngtemplates',
        'cssmin',
@@ -57,14 +65,36 @@ module.exports = function (grunt) {
        'copy',
        'htmlmin',
        'imagemin',
-       'clean:after'*/
+       'clean:after',*/
     ];
+
+    //TODO move target specific tasks list to build.js grunt config
+    if (buildTarget === 'dev') {
+      tasks.push('symlink:' + buildTarget);
+    }
     grunt.task.run(tasks);
   });
 
-  grunt.registerTask('default', [
-    'build'
-  ]);
+  grunt.registerTask('serve', function () {
+    var buildTarget = grunt.config.get('build.target');
+
+    var tasks = [
+      'build:' + buildTarget,
+      'connect:serve'
+    ];
+
+    grunt.task.run(tasks);
+  });
+
+  grunt.registerTask('default', function () {
+    var buildTarget = grunt.config.get('build.target');
+
+    var tasks = [
+      'build:' + buildTarget
+    ];
+
+    grunt.task.run(tasks);
+  });
 
 
 };

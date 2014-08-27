@@ -1,7 +1,8 @@
 {
   "name": "right-angles",
+  "brand": "Right Angles",
   "version": "0.0.1",
-  "description": "Angular JS & Friends UI Showcase for Chrome Packaged Apps. This includes the popular UI-Bootstrap and UI-Router components from Angular UI and Bootstrap themes created by bootswatch.com.",
+  "description": "Angular JS & Friends UI Showcase. This includes the popular UI-Bootstrap and UI-Router components from Angular UI and Bootstrap themes created by bootswatch.com.",
   "homepage": "https://github.com/lancecaraccioli/right-angles",
   "repository": {
     "type": "git",
@@ -52,7 +53,8 @@
     "load-grunt-config": "~0.13.1",
     "grunt-istanbul-coverage": "0.0.5",
     "karma-coverage": "~0.2.6",
-    "grunt-contrib-connect": "~0.8.0"
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-symlink": "~0.3.0"
   },
   "dependencies": {}
 }
