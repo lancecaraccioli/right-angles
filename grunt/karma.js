@@ -1,4 +1,4 @@
-{
+module.exports = {
   "unit": {
     "options": {
       "basePath": "",
@@ -25,3 +25,4 @@
     }
   }
 }
+;

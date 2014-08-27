@@ -1,4 +1,4 @@
-{
+module.exports = {
   "main": {
     "options": {
       "collapseBooleanAttributes": true,
@@ -14,3 +14,4 @@
     }
   }
 }
+;

@@ -1,4 +1,4 @@
-{
+module.exports = {
   "main": {
     "options": {
       "module": "right-angles"
@@ -38,3 +38,4 @@
     "dest": "temp/templates.js"
   }
 }
+;

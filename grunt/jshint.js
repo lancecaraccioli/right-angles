@@ -1,10 +1,11 @@
-{
+module.exports = {
   "options": {
-    "config": ".jscs.json"
+    "jshintrc": ".jshintrc"
   },
-  "src": [
-    "<%= source.scripts.window %>",
+  "source": [
+    "<%= source.scripts.app %>",
     "<%= source.scripts.tests %>",
     "<%= source.scripts.background %>"
   ]
 }
+;

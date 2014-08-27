@@ -1,4 +1,4 @@
-{
+module.exports = {
   "root": "./build",
   "dest": "<%= build.root %>/<%= build.target %>",
   "temp": "<%= build.root %>/temp",
@@ -7,4 +7,4 @@
     "dist",
     "dev"
   ]
-}
+};

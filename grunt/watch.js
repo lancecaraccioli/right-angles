@@ -1,4 +1,4 @@
-{
+module.exports = {
   "scripts": {
     "files": "app/**/*.js",
     "tasks": []
@@ -8,3 +8,4 @@
     "tasks": []
   }
 }
+;

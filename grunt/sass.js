@@ -1,4 +1,4 @@
-{
+module.exports = {
   "dist": {
     "options": {},
     "files": {
@@ -17,3 +17,4 @@
     }
   }
 }
+;

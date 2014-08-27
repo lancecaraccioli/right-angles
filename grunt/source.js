@@ -1,4 +1,4 @@
-{
+module.exports = {
   "root": "./src/app",
   "path": {
     "bower_components": "<%= source.root %>/bower_components"
@@ -40,3 +40,4 @@
     "window": ["<%= source.root %>/**/*.{gif,jpg,png}"]
   }
 }
+;

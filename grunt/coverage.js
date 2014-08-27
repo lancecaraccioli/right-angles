@@ -1,4 +1,4 @@
-{
+module.exports = {
   "options": {
     "thresholds": {
       "statements": 90,
@@ -10,3 +10,4 @@
     "root": "test"
   }
 }
+;

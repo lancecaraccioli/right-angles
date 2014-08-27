@@ -1,4 +1,4 @@
-{
+module.exports = {
   "temp": {
     "src": [
       "<%= build.temp %>"
@@ -10,3 +10,4 @@
     ]
   }
 }
+;

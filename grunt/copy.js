@@ -1,4 +1,4 @@
-{
+module.exports = {
   "main": {
     "files": [
       {
@@ -18,3 +18,4 @@
     ]
   }
 }
+;
