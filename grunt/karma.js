@@ -1,7 +1,7 @@
 module.exports = {
   'unit': {
     'options': {
-      'basePath': "',
+      'basePath': '',
       'frameworks': ['jasmine'],
       'files': [
         '<%= source.scripts.app %>',
@@ -20,7 +20,7 @@ module.exports = {
       'singleRun': true,
       'coverageReporter': {
         'type': 'html',
-        'dir': 'src/app/reports/coverage/"
+        'dir': 'src/app/reports/coverage/'
       }
     }
   }
