@@ -1,40 +1,40 @@
 module.exports = {
-  "main": {
-    "options": {
-      "module": "right-angles"
+  'main': {
+    'options': {
+      'module': 'right-angles'
     },
-    "src": [
+    'src': [
       [
         [
-          "app/home/**/*.html"
+          'app/home/**/*.html'
         ],
         [
-          "app/img/**/*.html"
+          'app/img/**/*.html'
         ],
         [
-          "app/info/**/*.html"
+          'app/info/**/*.html'
         ],
         [
-          "app/navbar/**/*.html"
+          'app/navbar/**/*.html'
         ],
         [
-          "app/nursery/**/*.html"
+          'app/nursery/**/*.html'
         ],
         [
-          "app/open-source-credits/**/*.html"
+          'app/open-source-credits/**/*.html'
         ],
         [
-          "app/showcase/**/*.html"
+          'app/showcase/**/*.html'
         ],
         [
-          "app/theme/**/*.html"
+          'app/theme/**/*.html'
         ],
-        "app/*.html",
-        "*.html"
+        'app/*.html',
+        '*.html'
       ],
-      "!app.html",
-      "!_SpecRunner.html"
+      '!app.html',
+      '!_SpecRunner.html'
     ],
-    "dest": "temp/templates.js"
+    'dest': 'temp/templates.js'
   }
 };

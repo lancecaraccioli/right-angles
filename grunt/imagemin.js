@@ -1,13 +1,13 @@
 module.exports = {
-  "main": {
-    "files": [
+  'main': {
+    'files': [
       {
-        "expand": true,
-        "cwd": "dist/",
-        "src": [
-          "**/{*.png,*.jpg}"
+        'expand': true,
+        'cwd': 'dist/',
+        'src': [
+          '**/{*.png,*.jpg}'
         ],
-        "dest": "dist/"
+        'dest': 'dist/'
       }
     ]
   }

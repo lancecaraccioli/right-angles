@@ -1,12 +1,12 @@
 module.exports = {
-  "temp": {
-    "src": [
-      "<%= build.temp %>"
+  'temp': {
+    'src': [
+      '<%= build.temp %>'
     ]
   },
-  "dest": {
-    "src": [
-      "<%= build.dest %>"
+  'dest': {
+    'src': [
+      '<%= build.dest %>'
     ]
   }
 };

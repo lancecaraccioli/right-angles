@@ -1,7 +1,7 @@
 module.exports = {
-  "main": {
-    "src": [
+  'main': {
+    'src': [
     ],
-    "dest": "temp/app.full.js"
+    'dest': 'temp/app.full.js'
   }
 };

@@ -1,19 +1,19 @@
 module.exports = {
-  "main": {
-    "files": [
+  'main': {
+    'files': [
       {
-        "src": [
-          "img/**"
+        'src': [
+          'img/**'
         ],
-        "dest": "dist/"
+        'dest': 'dist/'
       },
       {
-        "src": [
-          "app/bower_components/bootstrap/fonts/**"
+        'src': [
+          'app/bower_components/bootstrap/fonts/**'
         ],
-        "dest": "dist/",
-        "filter": "isFile",
-        "expand": true
+        'dest': 'dist/',
+        'filter': 'isFile',
+        'expand': true
       }
     ]
   }
