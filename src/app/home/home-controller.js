@@ -2,7 +2,7 @@
   'use strict';
   angular.module('RightAnglesShowcase').
     controller('rightAngles.HomeController', [
-      "$scope",
+      '$scope',
       function ($scope) {
       }
     ]);

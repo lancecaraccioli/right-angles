@@ -1,9 +1,9 @@
 module.exports = {
   "options": {
-    "config": ".jscs.json"
+    "config": ".jscsrc"
   },
   "src": [
-    "<%= source.scripts.window %>",
+    "<%= source.scripts.ours %>",
     "<%= source.scripts.tests %>",
     "<%= source.scripts.background %>"
   ]

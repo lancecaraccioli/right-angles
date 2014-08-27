@@ -13,91 +13,91 @@
        */
       var showcaseService = {
         showcases: {
-          "angular-ui-bootstrap": {
-            "name": "angular-ui-bootstrap",
-            "label": 'Angular UI Bootstrap Directives',
-            "demos": {
-              "accordian": {
-                "name": "accordian",
-                "label": 'Accordian'
+          'angular-ui-bootstrap': {
+            'name': 'angular-ui-bootstrap',
+            'label': 'Angular UI Bootstrap Directives',
+            'demos': {
+              'accordian': {
+                'name': 'accordian',
+                'label': 'Accordian'
               },
-              "alert": {
-                "name": "alert",
-                "label": 'Alert'
+              'alert': {
+                'name': 'alert',
+                'label': 'Alert'
               },
-              "buttons": {
-                "name": "buttons",
-                "label": 'Buttons'
+              'buttons': {
+                'name': 'buttons',
+                'label': 'Buttons'
               },
-              "carousel": {
-                "name": "carousel",
-                "label": 'Carousel'
+              'carousel': {
+                'name': 'carousel',
+                'label': 'Carousel'
               },
-              "collapse": {
-                "name": "collapse",
-                "label": 'Collapse'
+              'collapse': {
+                'name': 'collapse',
+                'label': 'Collapse'
               },
-              "datepicker": {
-                "name": "datepicker",
-                "label": 'datepicker'
+              'datepicker': {
+                'name': 'datepicker',
+                'label': 'datepicker'
               },
-              "dropdown": {
-                "name": "dropdown",
-                "label": 'dropdown'
+              'dropdown': {
+                'name': 'dropdown',
+                'label': 'dropdown'
               },
-              "modal": {
-                "name": "modal",
-                "label": 'modal'
+              'modal': {
+                'name': 'modal',
+                'label': 'modal'
               },
-              "pagination": {
-                "name": "pagination",
-                "label": 'pagination'
+              'pagination': {
+                'name': 'pagination',
+                'label': 'pagination'
               },
-              "popover": {
-                "name": "popover",
-                "label": 'popover'
+              'popover': {
+                'name': 'popover',
+                'label': 'popover'
               },
-              "progressbar": {
-                "name": "progressbar",
-                "label": 'progressbar'
+              'progressbar': {
+                'name': 'progressbar',
+                'label': 'progressbar'
               },
-              "rating": {
-                "name": "rating",
-                "label": 'rating'
+              'rating': {
+                'name': 'rating',
+                'label': 'rating'
               },
-              "tabs": {
-                "name": "tabs",
-                "label": 'tabs'
+              'tabs': {
+                'name': 'tabs',
+                'label': 'tabs'
               },
-              "timepicker": {
-                "name": "timepicker",
-                "label": 'timepicker'
+              'timepicker': {
+                'name': 'timepicker',
+                'label': 'timepicker'
               },
-              "tooltip": {
-                "name": "tooltip",
-                "label": 'tooltip'
+              'tooltip': {
+                'name': 'tooltip',
+                'label': 'tooltip'
               },
-              "typeahead": {
-                "name": "typeahead",
-                "label": 'typeahead'
+              'typeahead': {
+                'name': 'typeahead',
+                'label': 'typeahead'
               }
             }
           },
-          "angular-js": {
-            "name": "angular-js",
-            "label": 'Angular JS (todo)',
+          'angular-js': {
+            'name': 'angular-js',
+            'label': 'Angular JS (todo)',
             demos: {
-              "foo": {
-                "name": "foo",
-                "label": 'Foo'
+              'foo': {
+                'name': 'foo',
+                'label': 'Foo'
               },
-              "bar": {
-                "name": "bar",
-                "label": 'Bar'
+              'bar': {
+                'name': 'bar',
+                'label': 'Bar'
               },
-              "baz": {
-                "name": "baz",
-                "label": 'Baz'
+              'baz': {
+                'name': 'baz',
+                'label': 'Baz'
               }
             }
           }

@@ -2,11 +2,11 @@
   'use strict';
   angular.module('showcase')
     .controller('showcase.ShowcaseController', [
-      "$scope",
-      "$state",
-      "$stateParams",
-      "showcase.showcaseService",
-      "showcase.STATES",
+      '$scope',
+      '$state',
+      '$stateParams',
+      'showcase.showcaseService',
+      'showcase.STATES',
       function ($scope, $state, $stateParams, showcaseService, showcaseStateNames, initialShowcase) {
         function redirectToDemo() {
           $scope.selectedShowcase = showcaseService.getSelectedShowcase();
@@ -46,14 +46,14 @@
     ]).config(function ($stateProvider) {
       $stateProvider.
         state('showcases.showcase', {
-          url: "/:showcase",
+          url: '/:showcase',
           views: {
-            "detail@showcases": {
+            'detail@showcases': {
               templateUrl: function () {
                 return 'showcase/showcase-demo.html';
               }
             },
-            "demos@showcases": {
+            'demos@showcases': {
               templateUrl: function () {
                 return 'showcase/showcase-demos.html';
               }
@@ -62,7 +62,7 @@
           }
         }).
         state('showcases.showcase.demo', {
-          url: "/:demo",
+          url: '/:demo',
           views: {
             'demo@showcases.showcase': {
               templateUrl: function (stateParams) {

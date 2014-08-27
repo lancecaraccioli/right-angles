@@ -3,7 +3,7 @@ module.exports = {
     "jshintrc": ".jshintrc"
   },
   "source": [
-    "<%= source.scripts.app %>",
+    "<%= source.scripts.ours %>",
     "<%= source.scripts.tests %>",
     "<%= source.scripts.background %>"
   ]

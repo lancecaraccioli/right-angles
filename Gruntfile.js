@@ -39,21 +39,28 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('build', [
-    'clean:temp',
-    'code-quality',
-    'test'
-    /*'sass',
-     'ngtemplates',
-     'cssmin',
-     'concat',
-     'ngmin',
-     'uglify',
-     'copy',
-     'htmlmin',
-     'imagemin',
-     'clean:after'*/
-  ]);
+  grunt.registerTask('build', function (target) {
+    grunt.config.set('build.target', target || grunt.config.get('build.target'));
+
+    grunt.log.ok('Build. Target:' + grunt.config.get('build.target'));
+
+    var tasks = [
+      'clean:temp',
+      'code-quality',
+      'test'
+      /*'sass',
+       'ngtemplates',
+       'cssmin',
+       'concat',
+       'ngmin',
+       'uglify',
+       'copy',
+       'htmlmin',
+       'imagemin',
+       'clean:after'*/
+    ];
+    grunt.task.run(tasks);
+  });
 
   grunt.registerTask('default', [
     'build'

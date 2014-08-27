@@ -1,0 +1,9 @@
+{
+    "preset": "google",
+    "validateIndentation": 2,
+    "maximumLineLength": {
+        "value": 140,
+        "allowComments": true,
+        "allowRegex": true
+    }
+}

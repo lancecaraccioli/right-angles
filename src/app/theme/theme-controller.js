@@ -2,8 +2,8 @@
   'use strict';
   angular.module('theme').
     controller('theme.themeController', [
-      "$scope",
-      "theme.themeService",
+      '$scope',
+      'theme.themeService',
       function ($scope, themeService) {
         /**
          * Changes the current theme

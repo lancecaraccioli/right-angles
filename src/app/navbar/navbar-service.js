@@ -1,24 +1,24 @@
 (function () {
   'use strict';
   angular.module('rightAngles.navbar')
-    .factory('rightAngles.navbarService', ["rightAngles.appInfo", function (appInfo) {
+    .factory('rightAngles.navbarService', ['rightAngles.appInfo', function (appInfo) {
       var itemNameIndex = {};
       var navbarService = {
 
         items: [
-          {"name": "home", "heading": "", "glyph": "home"},
-          {"name": "showcases", "heading": "Showcase", "glyph": "briefcase"},
+          {'name': 'home', 'heading': '', 'glyph': 'home'},
+          {'name': 'showcases', 'heading': 'Showcase', 'glyph': 'briefcase'},
           {
-            "name": "themes",
-            "heading": "Themes",
-            "glyph": "cog",
-            "dropdownMenu": {template: 'theme/theme-menu.html'}
+            'name': 'themes',
+            'heading': 'Themes',
+            'glyph': 'cog',
+            'dropdownMenu': {template: 'theme/theme-menu.html'}
           },
           {
-            "name": "coverage",
-            "heading": "Test Coverage",
-            "glyph": "stats",
-            "dropdownMenu": {template: 'reports/browser-menu.html'}
+            'name': 'coverage',
+            'heading': 'Test Coverage',
+            'glyph': 'stats',
+            'dropdownMenu': {template: 'reports/browser-menu.html'}
           }
         ],
         brand: appInfo.brand,

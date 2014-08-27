@@ -12,10 +12,10 @@
     'rightAngles.navbar'
   ]);
 
-  App.config(function( $compileProvider ) {
+  App.config(function ($compileProvider) {
     //tell angular to allow 'chrome-extension' urls
     var currentImgSrcSanitizationWhitelist = $compileProvider.imgSrcSanitizationWhitelist();
-    var newImgSrcSanitizationWhiteList = currentImgSrcSanitizationWhitelist.toString().slice(0,-1) +
+    var newImgSrcSanitizationWhiteList = currentImgSrcSanitizationWhitelist.toString().slice(0, -1) +
       '|chrome-extension:' +
       currentImgSrcSanitizationWhitelist.toString().slice(-1);
 

@@ -8,7 +8,7 @@
       ];
 
       $scope.addAlert = function () {
-        $scope.alerts.push({msg: "Another alert!"});
+        $scope.alerts.push({msg: 'Another alert!'});
       };
 
       $scope.closeAlert = function (index) {
