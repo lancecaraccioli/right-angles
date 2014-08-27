@@ -7,5 +7,4 @@ module.exports = {
     "<%= source.scripts.tests %>",
     "<%= source.scripts.background %>"
   ]
-}
-;
+};

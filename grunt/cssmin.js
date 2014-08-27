@@ -5,5 +5,4 @@ module.exports = {
     ],
     "dest": "<% build.path %>/app.css"
   }
-}
-;
+};

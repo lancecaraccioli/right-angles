@@ -4,5 +4,4 @@ module.exports = {
     ],
     "dest": "temp/app.full.js"
   }
-}
-;
+};

@@ -16,5 +16,4 @@ module.exports = {
       "temp/app.css": "app/app.scss"
     }
   }
-}
-;
+};

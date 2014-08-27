@@ -13,5 +13,4 @@ module.exports = {
       "temp/app.html": "app/app.html"
     }
   }
-}
-;
+};

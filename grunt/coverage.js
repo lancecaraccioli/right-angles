@@ -9,5 +9,4 @@ module.exports = {
     "dir": "coverage",
     "root": "test"
   }
-}
-;
+};

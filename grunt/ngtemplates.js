@@ -37,5 +37,4 @@ module.exports = {
     ],
     "dest": "temp/templates.js"
   }
-}
-;
+};

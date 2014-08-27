@@ -39,5 +39,4 @@ module.exports = {
   "images": {
     "window": ["<%= source.root %>/**/*.{gif,jpg,png}"]
   }
-}
-;
+};

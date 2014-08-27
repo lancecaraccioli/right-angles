@@ -7,5 +7,4 @@ module.exports = {
     "files": "app/**/*.scss",
     "tasks": []
   }
-}
-;
+};
